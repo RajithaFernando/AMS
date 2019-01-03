@@ -1,0 +1,206 @@
+body
+{
+	background: #ddd;
+	font-family: poppins;
+	background: url(images/bgg.jpg);
+	background-size: cover;
+}
+.section-header
+{
+	text-align: center;
+	margin-bottom: 30px;
+	margin-top: 15px;
+}
+.section-header p
+{
+	font-size: 18px;
+}
+.single-service
+{
+	border:1px solid #ebebeb;
+	text-align: center;
+	background: #fff;
+}
+.service-bg
+{
+	height: 200px;
+	position: relative;
+}
+.service-bg-1
+{
+	background: url(images/c1.jpg);
+	-webkit-background-size:cover;
+	background-size:cover;
+	background-position:center;
+}
+.service-bg-2
+{
+	background: url(images/d.jpg);
+	-webkit-background-size:cover;
+	background-size:cover;
+	background-position:center;
+}
+.service-bg-3
+{
+	background: url(images/a1.jpg);
+	-webkit-background-size:cover;
+	background-size:cover;
+	background-position:center;
+}
+.service-bg-4
+{
+	background: url(images/b1.jpg);
+	-webkit-background-size:cover;
+	background-size:cover;
+	background-position:center;
+}
+.service-bg h2
+{
+	color: #fff;
+	background: tomato;
+	border: 1px solid tomato;
+	font-size: 17px;
+	text-align: center;
+	font-weight:700;
+	padding:15px;
+	position: absolute;
+	left: 8%;
+	width: 84%;
+	margin: 0;
+	bottom: -25px;
+	border-radius: 50px;
+	letter-spacing: 2px;  
+}
+.single-service:hover .service-bg h2
+{
+	background: #fff;
+	transition: .9s;
+	color: tomato;
+}
+.service-text
+{
+	padding: 50px 30px 20px;
+	font-size: 15px;
+	font-weight: 400;
+}
+.service-text p:last-child
+{
+	margin: 0;
+	line-height: 1.8;
+}
+.btn-area
+{
+	display: inline-block;
+	color: #333;
+	font-size: 17px;
+	font-weight: 700;
+	margin-top: 30px;
+	text-transform: capitalize;
+}
+.section_title{}.section_subtitle
+{
+	margin-bottom: 7px;
+	padding-left: 7px;
+	font-size: 16px;
+	line-height: 1;
+	text-transform: uppercase;
+	color: #aaaaaa;
+	border-left: 3px solid #bfa67a;
+	font-size:50px;
+	font-family: tahoma;
+} 
+.section_main_title
+{
+	margin-top: 0;
+	margin-bottom: 37px;
+	font-size: 30px;
+	line-height: 1.27;
+	font-weight: 300;
+}
+.about-item
+{
+	padding: 50px 30px 20px;
+	font-size: 15px;
+	font-weight: 400;
+}
+.team-section
+{
+	overflow: hidden;
+	text-align: center;
+	padding-left: 60px;
+	background: #34495e;
+}
+.team-section h1
+{
+	text-transform: uppercase;
+	margin-bottom: 60px;
+	color: white;
+	font-size: 40px;
+}
+.border
+{
+	display: block;
+	margin: auto;
+	width: 160px;
+	height: 3px;
+	background: #3498db;
+	margin-bottom: 40px;
+}
+.ps 
+{
+	margin-bottom: 40px;
+}
+.ps a
+{
+	display: inline-block;
+	margin: 0 30px;
+	width: 160px;
+	height: 160px;
+	overflow: hidden;
+	border-radius: 50%;
+}
+
+.ps a img 
+{
+	width: 100%;
+	filter:grayscale(100%);
+	transition: o.4s all;
+}
+.ps a:hover > img
+{
+	filter:none;
+}
+.section 
+{
+	width: 600px;
+	margin:auto;
+	font-size: 20px;
+	color: white;
+	text-align: justify;
+	height: 0;
+	overflow: hidden;
+}
+.section:target{
+	height: auto;
+}
+.name
+{
+	display: block;
+	margin-bottom: 30px;
+	font-size: 20px;
+	color: white;
+	text-align: justify;
+	height: 0;
+	font-size: 22px;
+
+}
+
+@media only screen and (max-width:767px)
+.single-service
+{
+	margin-top: 30px;
+	.service-bg h2
+	{
+		font-size: 13px;
+	}
+}
