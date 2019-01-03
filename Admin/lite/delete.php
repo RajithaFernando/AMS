@@ -130,7 +130,7 @@ include('message.php');
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         
-                        <li> <a class="waves-effect waves-dark" href="index.php" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a>
+                        <li> <a class="waves-effect waves-dark" href="eventmanager.php" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a>
                         </li>
                         <li> <a class="waves-effect waves-dark" href="profile.php" aria-expanded="false"><i class="mdi mdi-account-check"></i><span class="hide-menu">My Profile</span></a>
                         </li>
@@ -242,7 +242,7 @@ include('message.php');
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-            <footer class="footer"> UCSC© | V K Samaranayake Auditorium  </footer>
+            <footer class="footer">  AMS© | Auditorium Management System   </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
             <!-- ============================================================== -->

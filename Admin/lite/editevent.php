@@ -132,9 +132,9 @@ include('message.php');
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         
-                        <li> <a class="waves-effect waves-dark" href="index.php" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a>
+                        <li> <a class="waves-effect waves-dark" href="eventmanager.php" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a>
                         </li>
-                        <li> <a class="waves-effect waves-dark" href="pages-profile.php" aria-expanded="false"><i class="mdi mdi-account-check"></i><span class="hide-menu">My Profile</span></a>
+                        <li> <a class="waves-effect waves-dark" href="profile.php" aria-expanded="false"><i class="mdi mdi-account-check"></i><span class="hide-menu">My Profile</span></a>
                         </li>
                         <li> <a class="waves-effect waves-dark" href="create_event.php" aria-expanded="false"><i class="mdi mdi-table"></i><span class="hide-menu">Create Event</span></a>
                         </li>
@@ -147,7 +147,7 @@ include('message.php');
 -->
                       
                     
-                        <li> <a class="waves-effect waves-dark" href="pages-error-404.php" aria-expanded="false"><i class="mdi mdi-help-circle"></i><span class="hide-menu">My Events</span></a>
+                        <li> <a class="waves-effect waves-dark" href="editevent.php" aria-expanded="false"><i class="mdi mdi-help-circle"></i><span class="hide-menu">My Events</span></a>
                         </li>
                         
                           <li> <a class="waves-effect waves-dark" href="delete.php" aria-expanded="false"><i class="mdi mdi-book-open-variant"></i><span class="hide-menu">Delete Event</span></a>
@@ -367,7 +367,7 @@ include('message.php');
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-            <footer class="footer"> UCSC© | V K Samaranayake Auditorium  </footer>
+            <footer class="footer"> AMS© | Auditorium Management System </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
             <!-- ============================================================== -->

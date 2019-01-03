@@ -358,7 +358,7 @@
             <!-- ============================================================== -->
             
                     
-                    <footer class="footer"> Auditorium Management System
+                    <footer class="footer">  AMS© | Auditorium Management System 
                 
                                             
             </footer>';
