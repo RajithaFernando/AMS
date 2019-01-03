@@ -358,7 +358,7 @@
             <!-- ============================================================== -->
             
                     
-                    <footer class="footer"> Footerrerere  <?php echo $id   ;?>
+                    <footer class="footer"> Auditorium Management System
                 
                                             
             </footer>';

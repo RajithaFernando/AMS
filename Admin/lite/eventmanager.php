@@ -253,7 +253,7 @@ if(!isset($_SESSION['usertype']) || $_SESSION['usertype'] != 'e'){
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-            <footer class="footer"> UCSC© | V K Samaranayake Auditorium  </footer>
+            <footer class="footer">  AMS© | Auditorium Management System  </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
             <!-- ============================================================== -->
