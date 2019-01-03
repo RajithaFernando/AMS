@@ -226,13 +226,17 @@
                                 
                                     <div class="form-group row">
                                         <label for="example-date-input" class="col-2 col-form-label">Date</label>
-                                        <div class="col-3">
-                                            <input class="form-control" type="text" value="2011-08-19" id="example-date-input" name="date">
+                                        <div class="col-2">
+                                            <input class="form-control" type="date" value="" id="example-date-input" name="date">
                                         </div>
-
+										<label for="example-time-input" class="col-1 col-form-label"></label>
                                         <label for="example-time-input" class="col-1 col-form-label">Time</label>
+                                        <div class="col-2">
+                                            <input class="form-control" type="time" value="13:45:00" id="example-time-input" name="time">
+                                        </div>
+										
                                         <div class="col-3">
-                                            <input class="form-control" type="text" value="13:45:00" id="example-time-input" name="time">
+                                            <button  type="button" class="btn btn-primary" onclick="myFunction()">Wiew free Dates</button>
                                         </div>
                                     </div>
                                 
@@ -388,6 +392,17 @@
     <script src="../assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
     <!--Custom JavaScript -->
     <script src="js/custom.min.js"></script>
+	
+	<script>
+		function myFunction(){
+			window.open("../../cal.php","Dates","height=300,width=300")
+		
+		}
+	
+	
+	</script>
+	
+	
 </body>
 
 </html>
