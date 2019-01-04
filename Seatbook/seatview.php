@@ -23,22 +23,29 @@
     <h2 class="text-center">Seat view</h2>
     <hr>
     <div class="row">
-        <div class="col-sm-6">
-           <img src="http://placehold.it/600x400" alt="" class="img-responsive center-block">
+        <div class="col-sm-1">
+           
         </div>
-        <div class="row col-sm-6">
-            <div class="col-xs-6">
-              <img src="http://placehold.it/300x205" alt="" class="img-responsive">
-            </div>
-            <div class="col-xs-6">
-              <img src="http://placehold.it/300x205" alt="" class="img-responsive">
-            </div>
-            <div class="col-xs-6">
-              <img src="http://placehold.it/300x205" alt="" class="img-responsive">
-            </div>
-            <div class="col-xs-6">
-              <img src="http://placehold.it/300x205" alt="" class="img-responsive">
-            </div>
+		<?php 
+		for ($j=0; $j<4; $j++){
+			}
+		?>
+        <div class="row col-sm-10">
+			<?php 
+			
+				for ($i=0; $i<12; $i++){
+					echo '
+					<div class="col-xs-1">
+						'.$i.'
+					</div>
+					';
+				}
+			?>
+            
+            
+        </div>
+		<div class="col-sm-1">
+           
         </div>
     </div>
 </div>

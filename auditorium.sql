@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 03, 2019 at 01:48 PM
+-- Generation Time: Jan 04, 2019 at 10:12 AM
 -- Server version: 5.5.32
 -- PHP Version: 5.5.12
 
@@ -150,7 +150,9 @@ INSERT INTO `tempevents` (`refNo`, `name`, `h1`, `manager_id`, `date`, `time`, `
 ('181130094208', 'final', '', 2, '2011-08-19', '13:45:00', 'https://www.youtube.com/watch?v=nfWlot6h_JM', 'https://www.youtube.com/watch?v=nfWlot6h_JM', 'https://www.youtube.com/watch?v=nfWlot6h_JM', 'https://www.youtube.com/watch?v=nfWlot6h_JM', 'wsadawd', 'sarama.jpg', '', 7, 8, 9, ''),
 ('181231134745', 'ABC', '', 2, '2019-01-01', '13:46:00', 'http://localhost/auditorium/adminfunctions/admin.php', 'http://localhost/auditorium/adminfunctions/admin.php', 'http://localhost/auditorium/adminfunctions/admin.php', 'http://localhost/auditorium/adminfunctions/admin.php', 'aaadasda', 'PEO-hear_no_evil_monkey.svg_-1030x1030.png', '', 1000, 122, 212, 'confirmed'),
 ('181231163048', 'TEst 3', '', 2, '2019-01-22', '15:45:00', 'https://www.facebook.com/', 'https://www.facebook.com/', 'https://www.facebook.com/', 'https://www.facebook.com/', 'ADASLAKSLKAKLSMA', 'Rajeeva-Bandaranaike.jpg', '', 1000, 1111, 2132, 'confirmed'),
-('190101100922', 'AAA', '', 2, '2019-01-02', '13:45:00', 'http://localhost/auditorium/Admin/lite/create_event.php', 'http://localhost/auditorium/Admin/lite/create_event.php', 'http://localhost/auditorium/Admin/lite/create_event.php', 'http://localhost/auditorium/Admin/lite/create_event.php', 'AAAAAA', 'brainandheart.jpg', '', 1111, 1111, 1111, 'confirmed');
+('190101100922', 'AAA', '', 2, '2019-01-02', '13:45:00', 'http://localhost/auditorium/Admin/lite/create_event.php', 'http://localhost/auditorium/Admin/lite/create_event.php', 'http://localhost/auditorium/Admin/lite/create_event.php', 'http://localhost/auditorium/Admin/lite/create_event.php', 'AAAAAA', 'brainandheart.jpg', '', 1111, 1111, 1111, 'confirmed'),
+('2147483647', '  TEST 3', 'asda', 2, '2019-01-31', '15:45:00', 'https://www.youtube.com/', 'https://www.youtube.com/', 'https://www.youtube.com/', 'https://www.youtube.com/', '  asadsada  ', '1.jpg', '2.jpeg', 11111, 1111, 111, 'confirmed'),
+('2147483647', 'asfdas', 'asdas', 2, '2019-01-27', '23:45:00', 'https://www.youtube.com/', 'https://www.youtube.com/', 'https://www.youtube.com/', 'https://www.youtube.com/', 'sadasdasdasdasd', '6.jpg', '5.jpg', 12121, 121, 1211, 'confirmed');
 
 -- --------------------------------------------------------
 
