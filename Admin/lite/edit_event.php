@@ -40,11 +40,11 @@ $ticket1 = $_POST['ticket1'];
 $ticket2 = $_POST['ticket2'];
 $ticket3 = $_POST['ticket3'];
    
-//$ss = "UPDATE events SET name = 'Rajiadasdasdtha' WHERE id='$eid' ";
+//$ss = "UPDATE tempevents SET name = 'Rajiadasdasdtha' WHERE id='$eid' ";
 //$sss = "INSERT INTO `events` (`id`, `name`, `manager_id`, `date`, `time`, `web_url`, `fb_url`, `twitter_url`, `google_url`, `description`, `image`, `ticket1`, `ticket2`, `ticket3`) VALUES (NULL, 'a', '22', '2018-09-05', '05:00:00', '1', '1', '1', '11', '1', '1', '1', '1', '1')";
 
-//$event = "UPDATE events SET name = '$name' WHERE id=$eid";
-$event = "UPDATE  events SET name = '$name' , manager_id = '$manager_id',   web_url = '$web_url' , fb_url = '$fb_url' , twitter_url = '$twitter_url' , google_url = '$google_url', description  = '$description' WHERE id =$eid";
+//$event = "UPDATE tempevents SET name = '$name' WHERE id=$eid";
+$event = "UPDATE  tempevents SET name = '$name' , manager_id = '$manager_id',   web_url = '$web_url' , fb_url = '$fb_url' , twitter_url = '$twitter_url' , google_url = '$google_url', description  = '$description' WHERE refNo =$eid";
  
 //mysqli_query($connection,$event); 
 if (mysqli_query($connection,$event) ) {

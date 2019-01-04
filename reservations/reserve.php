@@ -16,7 +16,7 @@
 
 		<?php include('../includes/connection.php') ?>
 	<?php 
-	$events = 'SELECT * FROM tempEvents WHERE status="confirmed" ' ;//ORDER BY date' ; //Selecting all data from events table 
+	$events = 'SELECT * FROM tempevents WHERE status="confirmed" ' ;//ORDER BY date' ; //Selecting all data from events table 
 	$query = mysqli_query($connection, $events); //Passing SQL
 	//$row = mysqli_fetch_assoc($query);
 
@@ -25,10 +25,11 @@
 		$edats[] = $row['date'];
 		$ename[] = $row['name'];
 		$eref[] = $row['refNo'];
-		// print_r($edats);
+		 //print_r($edats);
+		 
 	}
-
-	// print_r($edats);
+	print_r($ename);
+	print_r($edats);
 	$l = count($edats);
 	echo $l;
 	//echo $edats;
@@ -41,6 +42,7 @@
 	?>
 
 	<?php
+	$yes = 0;
 	// Set your timezone
 	date_default_timezone_set('Asia/Colombo');
 	// Get prev & next month
@@ -77,50 +79,32 @@
 	$week = '';
 	// Add empty cell
 	$week .= str_repeat('<td></td>', $str);
+	$i=0;
 	for ( $day = 1; $day <= $day_count; $day++, $str++) {
-		 
+		$yes = false; 
 		$date = $ym . '-' . $day;
 		 
-
+		
 		for ($i=0; $i<$l; $i ++ ){
-			if($date == $edats[$i]){
+			if($date == $edats[$i] ){
 				// echo $edats[$i] . '  ';
 				// echo $today. '<br>';
 				$week .= '<td class="Eventday"><a href="../event/index.php?ref='.$eref[$i].'">' . $day .'<br><font color:black>'.$ename[$i]. '</font></a>';
-				$day ++;
-				$str ++;
-			   
-				
-			}
-			// elseif ($today == $date) {
-			//     $week .= '<td class="today">' . $day;
-			//     break;
-			// else{
-			//     $week .= '<td>' . $day;
-			//     break;
-				
-			// }
+				//$day = $day +1;
+				//$str = $str +1;
+				//unset($edats['$i']);
+				$yes = true;
 		
+				break;
+			}
 		}
+		
+		
 
-		// foreach($edats as $Eventdate){
-		//     // $Eventdate = $row['date'];
-
-		//     if ($Eventday == $date){
-		//         echo $Eventdate;
-		//         $week .= '<td class="Eventday">' . $day;
-		//         //array_splice($row['date'],0);
-		//         //echo $row['date'];
-		//         //break;
-				
-		//     }   
-			 
-			 
-		// }
-
-		if ($today == $date) {
+		if ($today == $date && !$yes) {
 			$week .= '<td class="today otherday">' . $day;
-		} else {
+		} 
+		elseif(!$yes) {
 			$week .= '<td>' . $day;
 		}
 		//$week .= '<td>' . $day;
@@ -137,6 +121,9 @@
 			$week = '';
 		}
 	}
+	
+	
+	
 	// $l = count($edats);
 	// for ($i=0; $i<$l; $i ++ ){
 	//     if($today != $edats[$i]){
@@ -145,7 +132,7 @@
 	//     }
 
 	// }
-
+	print_r($edats);
 	?>
 	<!DOCTYPE html>
 	<html lang="en">

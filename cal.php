@@ -78,49 +78,30 @@
 	// Add empty cell
 	$week .= str_repeat('<td></td>', $str);
 	for ( $day = 1; $day <= $day_count; $day++, $str++) {
-		 
+		$yes = false; 
 		$date = $ym . '-' . $day;
 		 
-
+		
 		for ($i=0; $i<$l; $i ++ ){
-			if($date == $edats[$i]){
+			if($date == $edats[$i] ){
 				// echo $edats[$i] . '  ';
 				// echo $today. '<br>';
 				$week .= '<td class="Eventday"><a href="../event/index.php?ref='.$eref[$i].'">' . $day .'<br><font color:black>'.$ename[$i]. '</font></a>';
-				$day ++;
-				$str ++;
-			   
-				
-			}
-			// elseif ($today == $date) {
-			//     $week .= '<td class="today">' . $day;
-			//     break;
-			// else{
-			//     $week .= '<td>' . $day;
-			//     break;
-				
-			// }
+				//$day = $day +1;
+				//$str = $str +1;
+				//unset($edats['$i']);
+				$yes = true;
 		
+				break;
+			}
 		}
+		
+		
 
-		// foreach($edats as $Eventdate){
-		//     // $Eventdate = $row['date'];
-
-		//     if ($Eventday == $date){
-		//         echo $Eventdate;
-		//         $week .= '<td class="Eventday">' . $day;
-		//         //array_splice($row['date'],0);
-		//         //echo $row['date'];
-		//         //break;
-				
-		//     }   
-			 
-			 
-		// }
-
-		if ($today == $date) {
+		if ($today == $date && !$yes) {
 			$week .= '<td class="today otherday">' . $day;
-		} else {
+		} 
+		elseif(!$yes) {
 			$week .= '<td>' . $day;
 		}
 		//$week .= '<td>' . $day;
@@ -137,6 +118,7 @@
 			$week = '';
 		}
 	}
+	
 	// $l = count($edats);
 	// for ($i=0; $i<$l; $i ++ ){
 	//     if($today != $edats[$i]){

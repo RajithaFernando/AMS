@@ -1,7 +1,8 @@
 <?php include('../includes/connection.php') ?>
 <?php 
+date_default_timezone_set("Asia/Colombo");
 $sss = 'date';
-$events = 'SELECT * FROM events ORDER BY date' ; //Selecting all data from events table 
+$events = 'SELECT * FROM tempevents ORDER BY date' ; //Selecting all data from events table 
 $query = mysqli_query($connection, $events); //Passing SQL
 //$row = mysqli_fetch_assoc($query);
 
@@ -10,12 +11,14 @@ while ($row = mysqli_fetch_assoc($query)){
     $edats[] = $row['date'];
     //print_r($edats);
 }
-print_r($edats);
+// event day array
+
+//print_r($edats);
 
 
 // while($row = mysqli_fetch_assoc($query)){
    
-//     $Eventday = $row['date'];
+     $Eventday = $row['date'];
 // }
 
 
@@ -30,7 +33,7 @@ print_r($edats);
 
 
 <?php
-date_default_timezone_set("	Asia/Colombo");
+
 
 //taking Preview and next month
 if(isset($_GET['ym'])){
@@ -117,7 +120,7 @@ for ( $day = 1; $day <= $day_count; $day++, $str++){
 
    
     // End of the week OR end of the month
-    if ($str %7 == 6 || $dat == $day_count){
+    if ($str %7 == 6 || $date == $day_count){
         if ($day == $day_count){
             // Add empty cell
             $week .= str_repeat('<td></td>',6-($str %7));

@@ -2,7 +2,7 @@
 <?php include('../../includes/session.php') ;
 
 
-include('message.php');
+include('../../includes/message.php');
 ?>
  
 
@@ -170,7 +170,7 @@ include('message.php');
 		
 		
         <?php
-                            $profile = "SELECT * FROM tempEvents WHERE  manager_id = '$id' AND status = 'confirmed' ";
+                            $profile = "SELECT * FROM tempevents WHERE  manager_id = '$id' AND status = 'not confirmed' ";
 
                             $query = mysqli_query($connection,$profile);
 
