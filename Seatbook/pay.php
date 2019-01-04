@@ -59,20 +59,20 @@ elseif (isset($_POST["t3"])) {
 					
                       <div class="btn-group btn-group-lg">
 						<form method="post" action="pay.php">
-						<input type="hidden" id="nos" name="val" value="">
+						<input type="hidden" id="nos1" name="count" value="1">
                         <button type="submit" class="btn btn-primary btn-lg btn-block month active-month selected-month" id='24month'>1 Seat</button>
 						</form> 
 					  </div>
                       <div class="btn-group btn-group-lg">
 						<form method="post" action="pay.php">
-						<input type="hidden" id="nos" name="val" value="">
-                        <button type="submit" class="btn btn-primary btn-lg btn-block month active-month selected-month" id='24month'>1 Seat</button>
+						<input type="hidden" id="nos2" name="count" value="2">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block month active-month selected-month" id='24month'>2 Seats</button>
 						</form> 
 					  </div>
                       <div class="btn-group btn-group-lg">
 						<form method="post" action="pay.php">
-						<input type="hidden" id="nos" name="val" value="">
-                        <button type="submit" class="btn btn-primary btn-lg btn-block month active-month selected-month" id='24month'>1 Seat</button>
+						<input type="hidden" id="nos3" name="count" value="3">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block month active-month selected-month" id='24month'>3 Seats</button>
 						</form> 
 					  </div>
 					
@@ -86,11 +86,28 @@ elseif (isset($_POST["t3"])) {
 					
                   </div>
                   
-				  
-				  
+				<?php  
+				  if (isset($_POST["nos1"])) {
+					$mul = $_POST["nos1"];
+					
+				}elseif (isset($_POST["nos2"])) {  
+					$mul = $_POST["nos2"];
+					
+				}
+				elseif (isset($_POST["nos3"])) {  
+					$mul = $_POST["nos3"];
+				}
+				else{
+					$mul = 0;
+				}
+				?>
+				
+				
+				
 					  
 				  
               </div>
+			  
 			  
 			  <div class="col-sm-6">
                 <div class="price-form">
@@ -104,7 +121,7 @@ elseif (isset($_POST["t3"])) {
                         <div class="col-sm-6">
                             <input type="hidden" id="amount_amirol" class="form-control">
                             <!-- <p class="price lead" id="total"></p> -->
-                            <input class="price lead" name="totalprice" type="text" id="total" disabled="disabled" style="" />
+                            <input class="price lead" name="totalprice" type="text" id="total" disabled="disabled" style="" value="<?php echo $price ;?>" />
                         </div>
                     </div>
                     </div>
@@ -117,7 +134,7 @@ elseif (isset($_POST["t3"])) {
                         <div class="col-sm-6">
                             <input type="hidden" id="amount_amirol" class="form-control">
                             <!-- <p class="price lead" id="total12"></p> -->
-                            <input class="price lead" name="totalprice12" type="text" id="total12" disabled="disabled" style="" />
+                            <input class="price lead" name="totalprice12" type="text" id="total12" disabled="disabled" style="" value="<?php echo $mul ;?>" />
                         </div>
                     </div>
                     </div>
@@ -130,7 +147,7 @@ elseif (isset($_POST["t3"])) {
                         <div class="col-sm-6">
                             <input type="hidden" id="amount_amirol" class="form-control">
                             <!-- <p class="price lead" id="total52"></p> -->
-                            <input class="price lead" name="totalprice52" type="text" id="total52" disabled="disabled" style="" />
+                            <input class="price lead" name="totalprice52" type="text" id="total52" disabled="disabled" style=""  value="<?php $total = $price*$mul; echo $total ;?>"/>
                         </div>
                     </div>
                     </div>
@@ -139,7 +156,10 @@ elseif (isset($_POST["t3"])) {
 
                   <div class="form-group">
                       <div class="col-sm-12">
-                        <button type="submit" class="btn btn-primary btn-lg btn-block">Proceed <span class="glyphicon glyphicon-chevron-right"></span></button>
+                        <form method="post" action="card.php">
+						  
+						  <button type="submit" class="btn btn-success btn-lg btn-block">Pay Amount</button>
+						</form>
                       </div>
                   </div>
                     <div class="form-group">
@@ -156,14 +176,7 @@ elseif (isset($_POST["t3"])) {
             
         </div>
 		
-		<div class="row">
-		<div class="col-lg-6">
-			<form method="post" action="pay.php">
-						  
-						  <button type="submit" class="btn btn-success btn-lg btn-block">Calculate Total</button>
-						</form>
-		</div>
-	</div>
+	
 
           </div>
 
