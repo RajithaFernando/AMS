@@ -24,7 +24,8 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Rancho" rel="stylesheet">
-
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         .site-header {
             width: 100%;
@@ -40,6 +41,36 @@
             font-size: 30px;
 
         }
+		body{
+			background: #eee;
+		}
+		span{
+			font-size:15px;
+		}
+		.anc
+		
+		.anc a{
+		  text-decoration:none !important; 
+		  color: #0062cc;
+		  border-bottom:2px solid #0062cc;
+		}
+		.box{
+			padding:60px 0px;
+		}
+
+		.box-part{
+			background:#FFF;
+			border-radius:0;
+			padding:60px 10px;
+			margin:30px 0px;
+		}
+		.text{
+			margin:20px 0px;
+		}
+
+		.fa{
+			 color:#4183D7;
+		}
 
     </style>
 
@@ -57,7 +88,7 @@
             
             <p><?php echo $row['h1']?></p>
             
-            <a class="btn btn-white" data-scroll href="#registration">View 360 Image</a>
+            <a class="btn btn-white" data-scroll href="#registration">Book Seats Now !</a>
         
         </div>
     </header>
@@ -88,6 +119,98 @@
             </div><!-- /.row -->
         </div><!-- /.container -->
     </section>
+	
+	<section>
+		<div class="box anc">
+			<div class="container">
+				<div class="row">
+					 
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+					   
+							<div class="box-part text-center">
+								
+								<i class="fa  fa-globe fa-3x" aria-hidden="true"></i>
+								
+								<div class="title">
+									<h4>Website</h4>
+								</div>
+								
+								<div class="text">
+									<span></span>
+								</div>
+								
+								<a href="<?php echo $row['web_url']; ?>">Go To Our Website</a>
+								
+							 </div>
+						</div>	 
+						
+						 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+					   
+							<div class="box-part text-center">
+								
+								<i class="fa fa-twitter fa-3x" aria-hidden="true"></i>
+							
+								<div class="title">
+									<h4>Twitter</h4>
+								</div>
+								
+								<div class="text">
+									<span></span>
+								</div>
+								
+								<a href="<?php echo $row['twitter_url']; ?>">Go To Twitter Page</a>
+								
+							 </div>
+						</div>	 
+						
+						 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+					   
+							<div class="box-part text-center">
+								
+								<i class="fa fa-facebook fa-3x" aria-hidden="true"></i>
+								
+								<div class="title">
+									<h4>Facebook</h4>
+								</div>
+								
+								<div class="text">
+									<span></span>
+								</div>
+								
+								<a href="<?php echo $row['fb_url']; ?>">Go to Facebook Page</a>
+								
+							 </div>
+						</div>	 
+						
+						
+						 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+					   
+							<div class="box-part text-center">
+								
+								<i class="fa fa-google-plus fa-3x" aria-hidden="true"></i>
+							
+								<div class="title">
+									<h4>Google</h4>
+								</div>
+								
+								<div class="text">
+									<span></span>
+								</div>
+								
+								<a href="<?php echo $row['google_url']; ?>">Go to Google + page</a>
+								
+							 </div>
+						</div>	 
+						
+						
+				
+				</div>		
+			</div>
+		</div>
+	
+	
+	</section>
+	
 
 
     <section id="registration" class="section registration">
@@ -162,7 +285,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <p class="site-info">Designed and <br> Developed by <a href="http://technextit.com">Technext Limited</a></p>
+                    <p class="site-info">Designed and <br> Developed by <a href="../">AMS© | Auditorium Management System </a></p>
                     <ul class="social-block">
                         <li><a href=""><i class="ion-social-twitter"></i></a></li>
                         <li><a href=""><i class="ion-social-facebook"></i></a></li>
