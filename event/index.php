@@ -87,9 +87,11 @@
             <h1><?php echo $row['name']; ?></h1>
             
             <p><?php echo $row['h1']?></p>
+            <form method="post" action="../Seatbook/seatview.php">
+			<input type="hidden" id="ref" name="ref" value="<?php echo $ref; ?>">
+			<button type="submit" class="btn btn-primary" >Book Seats Now !</button>
             
-            <a class="btn btn-white" data-scroll href="#registration">Book Seats Now !</a>
-        
+			<form>
         </div>
     </header>
 
@@ -212,7 +214,7 @@
 	</section>
 	
 
-
+<!--
     <section id="registration" class="section registration">
         <div class="container">
             <div class="row">
@@ -280,7 +282,7 @@
         </div>
     </section>
 
-
+-->
     <footer class="site-footer">
         <div class="container">
             <div class="row">
