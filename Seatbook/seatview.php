@@ -2,8 +2,10 @@
 <?php include('../includes/connection.php') ?>
 <?php 
 
-
+	
 	$ref = $_POST['ref'];
+	
+	
 	$query = "SELECT * FROM tempEvents WHERE refNo =". $ref  ;
     $result = mysqli_query($connection, $query);
     $row = mysqli_fetch_array($result);

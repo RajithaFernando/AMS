@@ -209,21 +209,30 @@
                                   <p><?php include_once('message.php'); ?></p>.
                                 </div>
 								
-								<form>
-  <div class="form-row align-items-center">
-    <div class="col-sm-3 my-1 col-lg-4">
-      <label class="sr-only" for="inlineFormInputName">Name</label>
-      <input type="text" class="form-control" id="inlineFormInputName" placeholder="Jane Doe">
-    </div>
-    
-    <div class="col-auto my-1 col-lg-4">
-      <div class="col-auto my-1">
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </div>
-    </div>
-    
-  </div>
-</form>
+								
+								<form action="create_event_submit.php" method="post" enctype="multipart/form-data">
+									
+									<div class="form-group row">
+                                        <label for="example-date-input" class="col-2 col-form-label">Date</label>
+                                        <div class="col-3">
+                                            <input class="form-control" type="date" min='1899-01-01' max='2000-13-13' id="datefield" name="date">
+                                        </div>
+										<label for="example-time-input" class="col-1 col-form-label"></label>
+                                       
+                                        <div class="col-3">
+                                            <button  type="button" class="btn btn-primary" onclick="myFunction()">Wiew free Dates</button>
+                                        </div>
+										
+										<div class="col-3">
+                                            <button  type="button" class="btn btn-primary" >Cheak Date for Booking</button>
+                                        </div>
+										
+                                    </div>
+									
+								</form>
+								<br>
+								<hr>
+								<br>
 								
 								
 								
@@ -234,7 +243,7 @@
 								
 								
 								
-								
+			
 								
                                 <form action="create_event_submit.php" method="post" enctype="multipart/form-data">
                                 <div class="form-group row">
@@ -426,6 +435,27 @@
 			window.open("../../cal.php","Dates","height=300,width=300")
 		
 		}
+		
+		var today = new Date();
+		var lastday;
+			var dd = today.getDate();
+			var mm = today.getMonth()+1; //January is 0!
+			var yyyy = today.getFullYear();
+			 if(dd<10){
+					dd='0'+dd
+				} 
+				if(mm<10){
+					mm='0'+mm
+				} 
+
+			today = yyyy+'-'+mm+'-'+dd;
+			document.getElementById("datefield").setAttribute("min", today);
+			var duration = 100; //In Days
+			int days = 100;
+			var newDate = today.setDate(cur.getDate() + 100);
+			document.getElementById("datefield").setAttribute("max", newDate);
+			
+			 
 	
 	
 	</script>
