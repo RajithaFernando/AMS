@@ -103,7 +103,7 @@ Include the above in your HEAD tag ---------->
                             <ul>
 								<li style="width:44%;"><a href=" '.$web_url.' "><span class="fa fa-globe"></span>' .$web_url. '</a></li>
                                 <li style="width:25%;"><a href="event/index.php"><form method="get" action="event/index.php"> <input type="hidden" name="ref" value='.$ref.'><span class="fa fa-info-circle"><input class="btn" type="submit" value="view More"></span></a></form></li>
-                                <li style="width:25%;"><a href="event/index.html#registration"><span class="fa fa-money"></span> book seats </a></li>
+                                <li style="width:25%;"><a href="Seatbook/seatview.php"><form method="post" action="Seatbook/seatview.php"> <input type="hidden" name="ref" value='.$ref.'><span class="fa fa-money"><input class="btn" type="submit" value="view More"></span> </form></a></li>
                             </ul>
     
                             

@@ -2,10 +2,41 @@
 <?php include('../includes/connection.php') ?>
 <?php 
 
-	
-	$ref = $_POST['ref'];
-	
-	
+
+	$query1 = "SELECT * FROM seats";
+    $result1 = mysqli_query($connection, $query1);
+    $row1 = mysqli_fetch_array($result1);
+
+    $statusvip=true; // Vip SEAT STATUS
+	$statusfc =true;
+	$statussc = true;
+    // at the begining
+    $vipc = 0;   //vip Ticket Count
+	$fcc= 0;     //fc Ticket Count
+	$scc= 0;    //sc Ticket Count
+///////////////////////////////////////////////////////////////////////////
+
+    ///////////this if and 
+	if (isset($_POST["ref"])) {
+
+            $ref = $_POST['ref'];
+
+	    $query2 = "SELECT * FROM sales WHERE eventRef =". $ref  ;
+	    $result2 = mysqli_query($connection, $query2);
+	    //$row2 = mysqli_fetch_array($result2);
+
+	    while ($row2 = mysqli_fetch_array($result2)){
+		    if ($row2['Catagory'] == 1){
+		    	$vipc = $vipc  + 1;
+		    }
+		    elseif ($row2['Catagory'] == 1){
+		    	$fcc = $vipc  + 1;
+		    }
+		    elseif ($row2['Catagory'] == 1){
+		    	$scc = $scc  + 1;
+		    }
+		}
+
 	$query = "SELECT * FROM tempEvents WHERE refNo =". $ref  ;
     $result = mysqli_query($connection, $query);
     $row = mysqli_fetch_array($result);
@@ -14,7 +45,41 @@
 	$t2 = $row['ticket2'];
 	$t3 = $row['ticket3'];
 
+	$vips= $row1['vip']; //vip Seats count
+    $fcs= $row1['fc'];	//fc Seats count
+    $scs= $row1['sc'];	//sc Seats count
+
+
+
+    }
+    ///////this else
+	else {
+
+	$t1 = "Plese Select an Event !";
+	$t2 = "Plese Select an Event !";
+	$t3 = "Plese Select an Event !";
+	}
+	//$restvip = 0;
+	$restvip = $vips - $vipc;		
+	$restfc = $fcs - $fcc;
+	$restsc = $scs - $scc;
+
+
+
+if ($restvip <= 0){
+	$statusvip = false;
+}
+if ($restfc <= 0){
+	$statusfc = false;
+}
+if ($restsc <= 0){
+	$statussc = false;
+}
+
+	
+
 ?>
+
 
 
 <html>
@@ -111,6 +176,9 @@
 			border-color:#777;
 			transition:0.5s;
 		}
+		a{
+			text-decoration: none !important;
+		}
 
     </style>    
 </head>
@@ -128,6 +196,20 @@
 			</p>
 		</div>
 	</div>
+
+
+	<div class="row">
+		<div class="col-lg-3">	
+			<br>
+		</div>
+		<div class="col-lg-6">
+			<a class ="" href="../events.php"><button type="button" class="btn btn-success btn-lg btn-block">  Go Back To Events</button></a>
+			<br>
+		</div>
+		<div class="col-lg-3">
+			<br>
+		</div>
+	</div>
 	
 	<div class="row">
 	
@@ -142,12 +224,23 @@
 	</div>
 	
 	<div class="team-back">
-	<span>
-		<form method="post" action="pay.php">
-			<input type="hidden" id="val" name="val" value="<?php echo $t1; ?>">
-			<button type="submit" class="btn btn-primary" >Book</button>
-            
-		<form>
+	<span><?php 
+			if($statusvip){
+				echo '
+					<form method="post" action="pay.php">
+						<input type="hidden" id="val" name="val" value="'.$t1.'">
+						<button type="submit" class="btn btn-primary" >Book</button>
+					<form>
+					';
+			}
+			else{
+				echo '
+						<button type="button" class="btn btn-danger">Sold Out</button>
+					';
+			}
+
+			?>
+
 		<img class="img-fluid w-100" src="vip.jpg">
 	</span>
 	</div>
@@ -168,11 +261,22 @@
 	
 	<div class="team-back">
 	<span>
-		<form method="post" action="pay.php">
-			<input type="hidden" id="val" name="val" value="<?php echo $t2; ?>">
-			<button type="submit" class="btn btn-primary" >Book</button>
-            
-		<form>
+		<?php 
+			if($statusvip){
+				echo '
+					<form method="post" action="pay.php">
+						<input type="hidden" id="val" name="val" value="'.$t2.'">
+						<button type="submit" class="btn btn-primary" >Book</button>
+					<form>
+					';
+			}
+			else{
+				echo '
+						<button type="button" class="btn btn-danger">Sold Out</button>
+					';
+			}
+
+			?>
 		<img class="img-fluid w-100" src="fc.jpg">
 	</span>
 	</div>
@@ -193,11 +297,22 @@
 	
 	<div class="team-back">
 	<span>
-		<form method="post" action="pay.php">
-			<input type="hidden" id="val" name="val" value="<?php echo $t3; ?>">
-			<button type="submit" class="btn btn-primary" >Book</button>
-            
-		<form>
+		<?php 
+			if($statusvip){
+				echo '
+					<form method="post" action="pay.php">
+						<input type="hidden" id="val" name="val" value="'.$t3.'">
+						<button type="submit" class="btn btn-primary" >Book</button>
+					<form>
+					';
+			}
+			else{
+				echo '
+						<button type="button" class="btn btn-danger">Sold Out</button>
+					';
+			}
+
+			?>
 		<img class="img-fluid w-100" src="sc.jpg">
 	</span>
 	</div>
@@ -221,11 +336,22 @@
 	
 	<div class="team-back">
 	<span>
-		<form method="post" action="pay.php">
-			<input type="hidden" id="val" name="val" value="<?php echo $t1; ?>">
-			<button type="submit" class="btn btn-primary" >Book</button>
-            
-		<form>
+		<?php 
+			if($statusvip){
+				echo '
+					<form method="post" action="pay.php">
+						<input type="hidden" id="val" name="val" value="'.$t1.'">
+						<button type="submit" class="btn btn-primary" >Book</button>
+					<form>
+					';
+			}
+			else{
+				echo '
+						<button type="button" class="btn btn-danger">Sold Out</button>
+					';
+			}
+
+			?>
 		<img class="img-fluid w-100" src="vip.jpg">
 	</span>
 	</div>
@@ -246,11 +372,22 @@
 	
 	<div class="team-back">
 	<span>
-		<form method="post" action="pay.php">
-			<input type="hidden" id="val" name="val" value="<?php echo $t2; ?>">
-			<button type="submit" class="btn btn-primary" >Book</button>
-            
-		<form>
+		<?php 
+			if($statusvip){
+				echo '
+					<form method="post" action="pay.php">
+						<input type="hidden" id="val" name="val" value="'.$t2.'">
+						<button type="submit" class="btn btn-primary" >Book</button>
+					<form>
+					';
+			}
+			else{
+				echo '
+						<button type="button" class="btn btn-danger">Sold Out</button>
+					';
+			}
+
+			?>
 		<img class="img-fluid w-100" src="vip.jpg">
 	</span>
 	</div>
@@ -271,11 +408,22 @@
 	
 	<div class="team-back">
 	<span>
-		<form method="post" action="paY.php">
-			<input type="hidden" id="val" name="val" value="<?php echo $t3; ?>">
-			<button type="submit" class="btn btn-primary" >Book</button>
-            
-		<form>
+		<?php 
+			if($statusvip){
+				echo '
+					<form method="post" action="pay.php">
+						<input type="hidden" id="val" name="val" value="'.$t3.'">
+						<button type="submit" class="btn btn-primary" >Book</button>
+					<form>
+					';
+			}
+			else{
+				echo '
+						<button type="button" class="btn btn-danger">Sold Out</button>
+					';
+			}
+
+			?>
 			<img class="img-fluid w-100" src="sc.jpg">
 	</span>
 	</div>

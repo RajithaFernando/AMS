@@ -1,18 +1,30 @@
+<?php include('../includes/connection.php') ?>
+<?php include('../includes/session.php') ?>
+
 <?php 
 
-	$price= 0;
-	$class = 0; 
-if (isset($_POST["t1"])) {
-    $price= $_POST["t1"];
-	$class = 'VIP CLASS' ;    
-}elseif (isset($_POST["t2"])) {  
-    $price= $_POST["t2"];
-	$class = 'FIRST CLASS' ;
+	
+if (isset($_POST["val"])) {
+   $_SESSION["price"]= $_POST["val"];
+	$_SESSION["class"] = 'VIP CLASS' ;    
 }
-elseif (isset($_POST["t3"])) {  
-    $price= $_POST["t3"];
-	$class = 'SECOND CLASS' ;
+elseif (isset($_POST["val"])) {  
+    $_SESSION["price"]= $_POST["val"];
+	$_SESSION["class"] = 'FIRST CLASS' ;
 }
+
+elseif (isset($_POST["val"])) {  
+    $_SESSION["price"]= $_POST["val"];
+	$_SESSION["class"] = 'SECOND CLASS' ;
+}
+else{
+    $_SESSION["price"]= 0;
+  $_SESSION["class"] = 0; 
+}
+// }
+// $_SESSION["price"] = $userRow['f_name'];
+// $_SESSION["class"]
+
 
 ?>
 <html>
@@ -46,32 +58,32 @@ elseif (isset($_POST["t3"])) {
                 <form class="form-horizontal form-pricing" role="form">
 
                   <div class="price-slider">
-                    <h4 class="great">You have selected <?php echo $class ;?> Seats</h4>
-                    <span>One Seat is Rs. <?php echo $price ;?></span>
+                    <h4 class="great">You have selected <?php echo $_SESSION["class"] ;?> Seats</h4>
+                    <span>One Seat is Rs. <?php echo $_SESSION["price"] ;?></span>
                     <div class="col-sm-12">
                       <div id="slider_amirol"></div>
                     </div>
                   </div>
                   <div class="price-slider">
-                    <h4 class="great">Duration</h4>
+                    <h4 class="great">Number of Seats</h4>
                     <span>Please choose one</span>
                     <div class="btn-group btn-group-justified">
 					
                       <div class="btn-group btn-group-lg">
-						<form method="post" action="pay.php">
-						<input type="hidden" id="nos1" name="count" value="1">
+            						<form method="post" action="pay.php">
+            						<input type="hidden" id="nos1" name="count" value="1">
                         <button type="submit" class="btn btn-primary btn-lg btn-block month active-month selected-month" id='24month'>1 Seat</button>
 						</form> 
 					  </div>
                       <div class="btn-group btn-group-lg">
-						<form method="post" action="pay.php">
-						<input type="hidden" id="nos2" name="count" value="2">
+            						<form method="post" action="pay.php">
+            						<input type="hidden" id="nos2" name="count" value="2">
                         <button type="submit" class="btn btn-primary btn-lg btn-block month active-month selected-month" id='24month'>2 Seats</button>
 						</form> 
 					  </div>
                       <div class="btn-group btn-group-lg">
-						<form method="post" action="pay.php">
-						<input type="hidden" id="nos3" name="count" value="3">
+            						<form method="post" action="pay.php">
+            						<input type="hidden" id="nos3" name="count" value="3">
                         <button type="submit" class="btn btn-primary btn-lg btn-block month active-month selected-month" id='24month'>3 Seats</button>
 						</form> 
 					  </div>
@@ -88,17 +100,17 @@ elseif (isset($_POST["t3"])) {
                   
 				<?php  
 				  if (isset($_POST["nos1"])) {
-					$mul = $_POST["nos1"];
+					$_SESSION["mul"] = $_POST["nos1"];
 					
 				}elseif (isset($_POST["nos2"])) {  
-					$mul = $_POST["nos2"];
+					$_SESSION["mul"] = $_POST["nos2"];
 					
 				}
 				elseif (isset($_POST["nos3"])) {  
-					$mul = $_POST["nos3"];
+					$_SESSION["mul"] = $_POST["nos3"];
 				}
 				else{
-					$mul = 0;
+					$_SESSION["mul"] = 0;
 				}
 				?>
 				
@@ -121,7 +133,7 @@ elseif (isset($_POST["t3"])) {
                         <div class="col-sm-6">
                             <input type="hidden" id="amount_amirol" class="form-control">
                             <!-- <p class="price lead" id="total"></p> -->
-                            <input class="price lead" name="totalprice" type="text" id="total" disabled="disabled" style="" value="<?php echo $price ;?>" />
+                            <input class="price lead" name="totalprice" type="text" id="total" disabled="disabled" style="" value="<?php echo $_SESSION["price"] ;?>" />
                         </div>
                     </div>
                     </div>
@@ -134,7 +146,7 @@ elseif (isset($_POST["t3"])) {
                         <div class="col-sm-6">
                             <input type="hidden" id="amount_amirol" class="form-control">
                             <!-- <p class="price lead" id="total12"></p> -->
-                            <input class="price lead" name="totalprice12" type="text" id="total12" disabled="disabled" style="" value="<?php echo $mul ;?>" />
+                            <input class="price lead" name="totalprice12" type="text" id="total12" disabled="disabled" style="" value="<?php if ($_SESSION["mul"] !== null) {echo $_SESSION["mul"] ;} else {echo 0;} ?>" />
                         </div>
                     </div>
                     </div>
@@ -147,7 +159,16 @@ elseif (isset($_POST["t3"])) {
                         <div class="col-sm-6">
                             <input type="hidden" id="amount_amirol" class="form-control">
                             <!-- <p class="price lead" id="total52"></p> -->
-                            <input class="price lead" name="totalprice52" type="text" id="total52" disabled="disabled" style=""  value="<?php $total = $price*$mul; echo $total ;?>"/>
+                            <input class="price lead" name="totalprice52" type="text" id="total52" disabled="disabled" style=""  value="<?php 
+                                                                                                                  if ($_SESSION["mul"] != null  && $_SESSION["price"] !=null) 
+                                                                                                                    { 
+                                                                                                                    $total = $_SESSION["price"]*$_SESSION["mul"];
+                                                                                                                     echo $total ;} 
+                            
+                                                                                                                     else{
+                                                                                                                      echo 0;
+                                                                                                                     }
+                                                                                                                     ?>"  />
                         </div>
                     </div>
                     </div>
