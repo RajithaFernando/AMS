@@ -209,42 +209,51 @@
                                   <p><?php include_once('message.php'); ?></p>.
                                 </div>
 								
-								
-								<form action="create_event_submit.php" method="post" enctype="multipart/form-data">
-									
-									<div class="form-group row">
-                                        <label for="example-date-input" class="col-2 col-form-label">Date</label>
-                                        <div class="col-3">
-                                            <input class="form-control" type="date" min='1899-01-01' max='2000-13-13' id="datefield" name="date">
-                                        </div>
-										<label for="example-time-input" class="col-1 col-form-label"></label>
-                                       
-                                        <div class="col-3">
-                                            <button  type="button" class="btn btn-primary" onclick="myFunction()">Wiew free Dates</button>
-                                        </div>
-										
-										<div class="col-3">
-                                            <button  type="button" class="btn btn-primary" >Cheak Date for Booking</button>
-                                        </div>
-										
-                                    </div>
-									
-								</form>
+								<?php 
+                                if (! isset($_POST["create_event"])) {
+                                    echo '
+
+                                        <form action="create_event.php" method="post" enctype="multipart/form-data">
+                                            
+                                            <div class="form-group row">
+                                                <label for="example-date-input" class="col-2 col-form-label">Date</label>
+                                                <div class="col-3">
+                                                    <input class="form-control" type="date" min="1899-01-01" max="2000-13-13" id="datefield" name="d1">
+                                                </div>
+                                                <label for="example-time-input" class="col-1 col-form-label"></label>
+                                               
+                                                <div class="col-3">
+                                                    <button  type="button" class="btn btn-primary" onclick="myFunction()">Wiew free Dates</button>
+                                                </div>
+                                                
+                                                <div class="col-3">
+                                                    <button  type="submit" class="btn btn-primary" name="dateok" >Cheak Date for Booking</button>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                        </form>
+
+
+                                    ';
+                                    }
+                                ?>
+
 								<br>
 								<hr>
 								<br>
 								
 								
 								
-								
-								
-								
-								
-								
-								
-								
-			
-								
+								<?php
+
+                                if (isset($_POST["dateok"])) {
+
+                                    $date = $_POST["d1"];
+                                    echo '
+
+
+
                                 <form action="create_event_submit.php" method="post" enctype="multipart/form-data">
                                 <div class="form-group row">
                                       <label for="example-text-input" class="col-2 col-form-label">Event Name</label>
@@ -252,8 +261,8 @@
                                         <input class="form-control" type="text" id="example-text-input" name="name">
                                       </div>
                                     </div>
-									
-									<div class="form-group row">
+                                    
+                                    <div class="form-group row">
                                       <label for="example-text-input" class="col-2 col-form-label">Event Heading</label>
                                       <div class="col-7">
                                         <input class="form-control" type="text" id="example-text-input" name="h1">
@@ -262,19 +271,12 @@
                                 
                                 
                                     <div class="form-group row">
-                                        <label for="example-date-input" class="col-2 col-form-label">Date</label>
-                                        <div class="col-2">
-                                            <input class="form-control" type="date" value="" id="example-date-input" name="date">
-                                        </div>
-										<label for="example-time-input" class="col-1 col-form-label"></label>
-                                        <label for="example-time-input" class="col-1 col-form-label">Time</label>
+                                       
+                                        <label for="example-time-input" class="col-2 col-form-label">Time</label>
                                         <div class="col-2">
                                             <input class="form-control" type="time" value="13:45:00" id="example-time-input" name="time">
                                         </div>
-										
-                                        <div class="col-3">
-                                            <button  type="button" class="btn btn-primary" onclick="myFunction()">Wiew free Dates</button>
-                                        </div>
+                                     
                                     </div>
                                 
                                     
@@ -341,13 +343,13 @@
                                         <div class="col-3">
                                             
                                         <input type="file" name="fileToUpload" id="fileToUpload">
-										</div>
-										
-										<label class="col-2 col-form-label">Event Photo 2</label>
+                                        </div>
+                                        
+                                        <label class="col-2 col-form-label">Event Photo 2</label>
                                         <div class="col-4">
                                             
                                         <input type="file" name="fileToUpload2" id="fileToUpload2">
-										</div>
+                                        </div>
                                         
                                     </div>
                                         
@@ -357,6 +359,8 @@
                                             <div class="form-group">
                                              
                                         <div class="col-sm-12">
+                                            <input type="hidden" name="manager_id" value= " '. $id .' " >
+                                            <input type="hidden" name="date" value= " '.$date.' " >
                                             <input type="submit" class="btn btn-success" value="Create Event"  name="create_event">
                                             
                                             
@@ -364,19 +368,36 @@
                                         </div>
                                         </div>
                                             
-                                            <input type="hidden" name="manager_id" value= "<?php echo $id; ?>" >
+                                            
                                         
                                        </form> 
-                                  
-                                        
-                    
+
+                                    ';    
                                 
-                                
-                                
-                                
-                                
-                                
-                                
+
+
+                                }
+
+
+
+                                else{  
+                                    echo '
+
+                                            <div class="alert alert-success" role="alert">
+                                              <h4 class="alert-heading">select A Date To book the Auditorium</h4>
+                                              <hr>
+                                              <p class="mb-0">Ada indala dawas 120 kata passe tamai bok kaanna pluwan</p>
+                                            </div>
+
+                                            ';
+                                }
+
+
+
+                                ?>
+								
+								
+							  
                                 
                                 
                             </div>
