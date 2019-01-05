@@ -178,8 +178,8 @@ else{
                   <div class="form-group">
                       <div class="col-sm-12">
                         <form method="post" action="card.php">
-						  
-						  <button type="submit" class="btn btn-success btn-lg btn-block">Pay Amount</button>
+						  <input type="hidden" id="custId" name="val" value="<?php echo $total; ">
+						  <button type="submit" class="btn btn-success btn-lg btn-block"  name="">Pay Amount</button>
 						</form>
                       </div>
                   </div>

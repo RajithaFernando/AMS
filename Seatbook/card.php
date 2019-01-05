@@ -114,7 +114,7 @@
                                     <label for="cardNumber">Amount</label>
                                     <div class="">
                                        
-										<input type="text" class="form-control" id="validationTooltipUsername" placeholder="Username" aria-describedby="validationTooltipUsernamePrepend" readonly>
+										<input type="text" class="form-control" id="validationTooltipUsername" placeholder="" aria-describedby="validationTooltipUsernamePrepend" readonly value="<?php echo $_POST['val'] ;?>">
 										<!--
                                         <span class="input-group-addon"><i class="fa  fa-dollar-sign"></i></span>
 										-->
@@ -330,9 +330,7 @@
 
 
 function myFunction() {
-  document.getElementById("demo").innerHTML = '<div class="alert alert-success" role="alert" ><h4 class="alert-heading">Well done!</h4><p>you have successfully reserved Seats. We will Notify you with an email soon. Please Use Your Reference Code in the ticket Stall on the event Day</p><hr><p class="mb-0"> AMS© | Auditorium Management System  </p></div>
-											
-											';
+  document.getElementById("demo").innerHTML = '<div class="alert alert-success" role="alert" ><h4 class="alert-heading">Well done!</h4><p>you have successfully reserved Seats. We will Notify you with an email soon. Please Use Your Reference Code in the ticket Stall on the event Day</p><hr><p class="mb-0"> AMS© | Auditorium Management System  </p></div>';
 }
 </script>
 

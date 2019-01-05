@@ -41,6 +41,10 @@ if(isset($_POST['login-submit'])){
                 header("Location:../adminfunctions/index.php");
 
             }
+            elseif($usertype=='m'){
+                header("Location:../events.php");
+
+            }
             //}
             
             

@@ -6,7 +6,7 @@
 
 if(!isset($_SESSION['usertype']) || $_SESSION['usertype'] != 'c'){
        $message = base64_encode(urlencode("Please Login"));
-       header('Location:../includes/login.php?msg=' . $message);
+       header('Location:../html/login.php?msg=' . $message);
        exit();
        }
        
