@@ -208,6 +208,34 @@
                                 <div class="alert alert-warning">
                                   <p><?php include_once('message.php'); ?></p>.
                                 </div>
+								
+								<form>
+  <div class="form-row align-items-center">
+    <div class="col-sm-3 my-1 col-lg-4">
+      <label class="sr-only" for="inlineFormInputName">Name</label>
+      <input type="text" class="form-control" id="inlineFormInputName" placeholder="Jane Doe">
+    </div>
+    
+    <div class="col-auto my-1 col-lg-4">
+      <div class="col-auto my-1">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+    </div>
+    
+  </div>
+</form>
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
                                 <form action="create_event_submit.php" method="post" enctype="multipart/form-data">
                                 <div class="form-group row">
                                       <label for="example-text-input" class="col-2 col-form-label">Event Name</label>
