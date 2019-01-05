@@ -41,6 +41,10 @@ if(isset($_POST['login-submit'])){
                 header("Location:adminfunctions/admin.php");
 
             }
+            elseif($usertype=='c'){
+                header("Location:../Seatbook/pay.php");
+
+            }
             //}
             
             

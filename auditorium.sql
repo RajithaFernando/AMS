@@ -1,20 +1,22 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.14
--- http://www.phpmyadmin.net
+-- version 4.7.9
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 04, 2019 at 10:12 AM
--- Server version: 5.5.32
--- PHP Version: 5.5.12
+-- Generation Time: Jan 05, 2019 at 09:53 AM
+-- Server version: 10.1.31-MariaDB
+-- PHP Version: 7.1.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `auditorium`
@@ -26,8 +28,8 @@ SET time_zone = "+00:00";
 -- Table structure for table `events`
 --
 
-CREATE TABLE IF NOT EXISTS `events` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `events` (
+  `id` int(11) NOT NULL,
   `RefNo` int(11) NOT NULL,
   `name` varchar(191) NOT NULL,
   `manager_id` int(10) NOT NULL,
@@ -41,9 +43,8 @@ CREATE TABLE IF NOT EXISTS `events` (
   `image` varchar(191) NOT NULL,
   `ticket1` int(10) NOT NULL,
   `ticket2` int(10) NOT NULL,
-  `ticket3` int(10) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+  `ticket3` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `events`
@@ -63,7 +64,7 @@ INSERT INTO `events` (`id`, `RefNo`, `name`, `manager_id`, `date`, `time`, `web_
 -- Table structure for table `reservations`
 --
 
-CREATE TABLE IF NOT EXISTS `reservations` (
+CREATE TABLE `reservations` (
   `id` int(11) NOT NULL,
   `title` varchar(225) NOT NULL,
   `dayStart` int(11) NOT NULL,
@@ -84,8 +85,9 @@ INSERT INTO `reservations` (`id`, `title`, `dayStart`, `eventday`) VALUES
 -- Table structure for table `sales`
 --
 
-CREATE TABLE IF NOT EXISTS `sales` (
+CREATE TABLE `sales` (
   `userID` int(10) NOT NULL,
+  `Date` date NOT NULL,
   `eventRef` text NOT NULL,
   `seatID` int(10) NOT NULL,
   `ticketValue` int(10) NOT NULL,
@@ -96,12 +98,33 @@ CREATE TABLE IF NOT EXISTS `sales` (
 -- Dumping data for table `sales`
 --
 
-INSERT INTO `sales` (`userID`, `eventRef`, `seatID`, `ticketValue`, `Catagory`) VALUES
-(1, '181231134745', 1, 1000, 0),
-(1, '181231134745', 2, 3000, 1),
-(2, '181231134745', 5, 2000, 2),
-(6, '181231134745', 9, 1000, 3),
-(8, '181231134745', 21, 3000, 1);
+INSERT INTO `sales` (`userID`, `Date`, `eventRef`, `seatID`, `ticketValue`, `Catagory`) VALUES
+(1, '0000-00-00', '181231134745', 1, 1000, 0),
+(1, '0000-00-00', '181231134745', 2, 3000, 1),
+(2, '0000-00-00', '181231134745', 5, 2000, 2),
+(6, '0000-00-00', '181231134745', 9, 1000, 3),
+(8, '0000-00-00', '181231134745', 21, 3000, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `seats`
+--
+
+CREATE TABLE `seats` (
+  `name` int(50) NOT NULL,
+  `vip` int(5) NOT NULL,
+  `fc` int(5) NOT NULL,
+  `sc` int(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `seats`
+--
+
+INSERT INTO `seats` (`name`, `vip`, `fc`, `sc`) VALUES
+(0, 200, 200, 200),
+(1, 200, 200, 200);
 
 -- --------------------------------------------------------
 
@@ -109,7 +132,7 @@ INSERT INTO `sales` (`userID`, `eventRef`, `seatID`, `ticketValue`, `Catagory`) 
 -- Table structure for table `tempevents`
 --
 
-CREATE TABLE IF NOT EXISTS `tempevents` (
+CREATE TABLE `tempevents` (
   `refNo` text NOT NULL,
   `name` varchar(191) NOT NULL,
   `h1` varchar(200) NOT NULL,
@@ -152,7 +175,11 @@ INSERT INTO `tempevents` (`refNo`, `name`, `h1`, `manager_id`, `date`, `time`, `
 ('181231163048', 'TEst 3', '', 2, '2019-01-22', '15:45:00', 'https://www.facebook.com/', 'https://www.facebook.com/', 'https://www.facebook.com/', 'https://www.facebook.com/', 'ADASLAKSLKAKLSMA', 'Rajeeva-Bandaranaike.jpg', '', 1000, 1111, 2132, 'confirmed'),
 ('190101100922', 'AAA', '', 2, '2019-01-02', '13:45:00', 'http://localhost/auditorium/Admin/lite/create_event.php', 'http://localhost/auditorium/Admin/lite/create_event.php', 'http://localhost/auditorium/Admin/lite/create_event.php', 'http://localhost/auditorium/Admin/lite/create_event.php', 'AAAAAA', 'brainandheart.jpg', '', 1111, 1111, 1111, 'confirmed'),
 ('2147483647', '  TEST 3', 'asda', 2, '2019-01-31', '15:45:00', 'https://www.youtube.com/', 'https://www.youtube.com/', 'https://www.youtube.com/', 'https://www.youtube.com/', '  asadsada  ', '1.jpg', '2.jpeg', 11111, 1111, 111, 'confirmed'),
-('2147483647', 'asfdas', 'asdas', 2, '2019-01-27', '23:45:00', 'https://www.youtube.com/', 'https://www.youtube.com/', 'https://www.youtube.com/', 'https://www.youtube.com/', 'sadasdasdasdasd', '6.jpg', '5.jpg', 12121, 121, 1211, 'confirmed');
+('2147483647', 'asfdas', 'asdas', 2, '2019-01-27', '23:45:00', 'https://www.youtube.com/', 'https://www.youtube.com/', 'https://www.youtube.com/', 'https://www.youtube.com/', 'sadasdasdasdasd', '6.jpg', '5.jpg', 12121, 121, 1211, 'confirmed'),
+('2147483647', '', '', 0, '0000-00-00', '00:00:00', '', '', '', '', '', '', '', 0, 0, 0, 'not confirmed'),
+('2147483647', '', '', 0, '2019-01-09', '00:00:00', '', '', '', '', '', '', '', 0, 0, 0, 'not confirmed'),
+('2147483647', '', '', 0, '0000-00-00', '00:00:00', '', '', '', '', '', '', '', 0, 0, 0, 'not confirmed'),
+('2147483647', '', '', 0, '2019-01-17', '00:00:00', '', '', '', '', '', '', '', 0, 0, 0, 'not confirmed');
 
 -- --------------------------------------------------------
 
@@ -160,7 +187,7 @@ INSERT INTO `tempevents` (`refNo`, `name`, `h1`, `manager_id`, `date`, `time`, `
 -- Table structure for table `ticket_count`
 --
 
-CREATE TABLE IF NOT EXISTS `ticket_count` (
+CREATE TABLE `ticket_count` (
   `event_id` int(11) NOT NULL,
   `ticket1` int(11) NOT NULL,
   `ticket2` int(11) NOT NULL,
@@ -180,17 +207,15 @@ INSERT INTO `ticket_count` (`event_id`, `ticket1`, `ticket2`, `ticket3`) VALUES
 -- Table structure for table `users`
 --
 
-CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `users` (
+  `id` int(10) NOT NULL,
   `f_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `l_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `usertype` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `mobile` int(15) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=18 ;
+  `mobile` int(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
@@ -210,6 +235,40 @@ INSERT INTO `users` (`id`, `f_name`, `l_name`, `usertype`, `email`, `password`, 
 (15, 'Nimal 2', 'Fernando', 'e', 'fernando@gmail.com', '111', 111),
 (16, 'Gatta', 'Chanuka', 'e', 'dinith@gmail.com', '111', 1111),
 (17, 'assad', 'asdasdas', 'e', 'A@asdas.ca', '111', 111);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `events`
+--
+ALTER TABLE `events`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `users_email_unique` (`email`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `events`
+--
+ALTER TABLE `events`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
