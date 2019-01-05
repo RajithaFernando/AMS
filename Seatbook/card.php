@@ -64,6 +64,11 @@
 		.credit-card-box .panel-heading img {
 			min-width: 180px;
 		}
+		
+		.anchor {
+			text-decoration: none !important ;
+		
+		}
 	
 	
 	
@@ -94,8 +99,30 @@
                         </div>
                     </div>                    
                 </div>
+				
+				
+				
+				
+				
+				
                 <div class="panel-body">
                     <form role="form" id="payment-form" method="POST" action="javascript:void(0);">
+					
+						<div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label for="cardNumber">Amount</label>
+                                    <div class="">
+                                       
+										<input type="text" class="form-control" id="validationTooltipUsername" placeholder="Username" aria-describedby="validationTooltipUsernamePrepend" readonly>
+										<!--
+                                        <span class="input-group-addon"><i class="fa  fa-dollar-sign"></i></span>
+										-->
+								   </div>
+                                </div>                            
+                            </div>
+                        </div>
+					
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="form-group">
@@ -145,7 +172,7 @@
                         
                         <div class="row">
                             <div class="col-xs-12">
-                                <button class="subscribe btn btn-success btn-lg btn-block" type="button">Start Subscription</button>
+                                <button class="subscribe btn btn-success btn-lg btn-block"  onclick="myFunction()">Start Subscription</button>
                             </div>
                         </div>
                         <div class="row" style="display:none;">
@@ -161,9 +188,16 @@
             
         </div>            
         
-        <div class="col-xs-12 col-md-8" style="font-size: 12pt; line-height: 2em;">
+        
+		<div class=\"row">
+												<div class="col-xs-12 col-md-4" id="demo">
+												
+												
+												
+												</div>
+											</div>
             
-        </div>
+       
         
     </div>
 </div>
@@ -294,6 +328,16 @@
 			}
 		}, 250);
 
+
+function myFunction() {
+  document.getElementById("demo").innerHTML = '<div class="alert alert-success" role="alert" ><h4 class="alert-heading">Well done!</h4><p>you have successfully reserved Seats. We will Notify you with an email soon. Please Use Your Reference Code in the ticket Stall on the event Day</p><hr><p class="mb-0"> AMS© | Auditorium Management System  </p></div>
+											
+											';
+}
 </script>
+
+
+
+
 
 </html>
