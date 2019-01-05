@@ -55,6 +55,9 @@
 	</section>
 
 <div class="simple-form">
+      <div class="alert alert-info">
+          <h4><?php include_once('../includes/message.php'); ?></h4>
+        </div>
 		<form id="login" action="login_submit.php" method="post" role="form" style="display: block;">
 
       <div class="form-group">
@@ -65,9 +68,13 @@
         </div>-->
         <input type="email" name="email"  id="button" placeholder="Email Address" value=""><br><br>
 			  <input type="password" name="password"  id="button" placeholder="Password"><br><br>
-			  <input type="submit"  name= "login-submit" value="login" id="butt" >
-      </div>
+			  
+        <input type="submit"  name= "login-submit" value="login" id="butt" >
 
+      </div>
+      <div class="form-group">
+          <a href="registration.php"><input type="button"  name= "login-submit" value="Dosent have an account ? Sign up hear" id="butt2" ></a>
+      </div>
 <!--<input type="submit" name="login-submit" id="login-submit" tabindex="3" class="form-control btn btn-login" value="Log In">-->
 			
 		</form>

@@ -1,7 +1,7 @@
 <?php
 
-include('includes/connection.php');
-include('includes/session.php');
+include('../includes/connection.php');
+include('../includes/session.php');
 if(isset($_POST['customer'])){
 	
     // Assign input data from form to variables
@@ -22,7 +22,7 @@ if(isset($_POST['customer'])){
     
         if($num > 0){
         $message = base64_encode(urlencode("Email already exists"));
-        header('Location:register.php?msg=' . $message);
+        header('Location:registration.php?msg=' . $message);
         exit();
         }
         
@@ -42,7 +42,7 @@ if(isset($_POST['customer'])){
             
             else {
                 $message = base64_encode(urlencode("SQL Error while Registering"));
-				header('Location:register.php?msg=' . $message);
+				header('Location:registration.php?msg=' . $message);
 				exit();
             }  
         }
@@ -55,7 +55,7 @@ if(isset($_POST['event-manager'])){
 	$f_name = $_POST['f_name'];
     $l_name = $_POST['l_name'];
 	$email = $_POST['email'];
-    $password = $_POST['password'];
+    $password = sha1($_POST['password']);
 	//$password2 = sha1($_POST['confirm-password']);
     $usertype = 'e';
     $mobile = $_POST['mobile'];

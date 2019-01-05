@@ -29,8 +29,15 @@ body
 	padding: 10px;
 	border-radius: 5px;
 	outline: 0px;
-
 }
+.button2
+{
+	width:250px;
+	padding: 10px;
+	border-radius: 5px;
+	outline: 0px;
+	}
+
 #butt
 {
 	background-color: green;
@@ -49,3 +56,15 @@ body
  position: absolute;
  width: 100%;
 }
+#butt2
+{
+	background-color: green;
+	width:500px;
+	padding: 10px;
+	border-radius: 5px;
+	outline: 0px;
+	margin-top: 10px;
+}
+.spn{
+	margin-top: 10px;
+}	

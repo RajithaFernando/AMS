@@ -9,7 +9,7 @@ if(isset($_POST['login-submit'])){
 	//echo "something";
     //Assign data from login form to variables
 	$email = $_POST['email'];
-	$password =($_POST['password']);
+	$password =sha1($_POST['password']);
     
     
     //echo $password ;
@@ -41,7 +41,7 @@ if(isset($_POST['login-submit'])){
                 header("Location:../adminfunctions/index.php");
 
             }
-            elseif($usertype=='m'){
+            elseif($usertype=='c'){
                 header("Location:../events.php");
 
             }

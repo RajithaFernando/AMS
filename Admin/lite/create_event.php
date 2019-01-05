@@ -1,5 +1,5 @@
 <?php include('../../includes/session.php') ?>
-
+<?php include('../../includes/connection.php') ?>
 
 
   <?php 
@@ -7,7 +7,7 @@
 
   if(!isset($_SESSION['usertype']) || $_SESSION['usertype'] != 'e'){
     $message = base64_encode(urlencode("Please Login"));
-    header('Location:../../login.php?msg=' . $message);
+    header('Location:../../html/login.php?msg=' . $message);
     exit();
 }
 
@@ -247,152 +247,167 @@
 								
 								<?php
 
-                                if (isset($_POST["dateok"])) {
+                                if (isset($_POST["dateok"]) ) {
 
                                     $date = $_POST["d1"];
-                                    echo '
 
-
-
-                                <form action="create_event_submit.php" method="post" enctype="multipart/form-data">
-                                <div class="form-group row">
-                                      <label for="example-text-input" class="col-2 col-form-label">Event Name</label>
-                                      <div class="col-5">
-                                        <input class="form-control" type="text" id="example-text-input" name="name">
-                                      </div>
-                                    </div>
-                                    
-                                    <div class="form-group row">
-                                      <label for="example-text-input" class="col-2 col-form-label">Event Heading</label>
-                                      <div class="col-7">
-                                        <input class="form-control" type="text" id="example-text-input" name="h1">
-                                      </div>
-                                    </div>
-                                
-                                
-                                    <div class="form-group row">
-                                       
-                                        <label for="example-time-input" class="col-2 col-form-label">Time</label>
-                                        <div class="col-2">
-                                            <input class="form-control" type="time" value="13:45:00" id="example-time-input" name="time">
-                                        </div>
-                                     
-                                    </div>
-                                
-                                    
-                                
-                                    <div class="form-group row">
-                                        <label for="example-url-input" class="col-2 col-form-label">Website</label>
-                                        <div class="col-10">
-                                            <input class="form-control" type="url" placeholder="https://website.com" id="example-url-input" name="web_url">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="example-url-input" class="col-2 col-form-label">Facebook URL</label>
-                                        <div class="col-10">
-                                            <input class="form-control" type="url" placeholder="https:/facebook.com" id="example-url-input" name="fb_url">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="example-url-input" class="col-2 col-form-label">Twitter URL</label>
-                                        <div class="col-10">
-                                            <input class="form-control" type="url" placeholder="https://twitter.com" id="example-url-input" name="twitter_url">
-                                        </div>
-                                    </div>
-                                <div class="form-group row">
-                                        <label for="example-url-input" class="col-2 col-form-label">Google + URL </label>
-                                        <div class="col-10">
-                                            <input class="form-control" type="url" placeholder="https://googleplus.com" id="example-url-input" name="google_url">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        
-                                          <label for="comment" class="col-2 col-form-label">Event Discription</label>
-                                        <div class="col-10">
-                                          <textarea class="form-control" rows="5" id="example-text-input" name="description" placeholder="DIscrive Your Event"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="example-text-input" class="col-3 col-form-label">Ticket price (VIP)</label>
-                                        <div class="col-6">
-                                            <input class="form-control" type="number" id="example-text-input" name="ticket1">
-                                        </div>
-                                            <div class="col3"></div>
-
-                                    </div>
-                                
-                                    <div class="form-group row">
-                                        <label for="example-text-input" class="col-3 col-form-label">Ticket price First class</label>
-                                        <div class="col-6">
-                                            <input class="form-control" type="number" id="example-text-input" name="ticket2">
-                                        </div>
-                                            <div class="col3"></div>
-
-                                    </div>
-                                
-                                     <div class="form-group row">
-                                        <label for="example-text-input" class="col-3 col-form-label">Ticket price Second class</label>
-                                        <div class="col-6">
-                                            <input class="form-control" type="number" id="example-text-input" name="ticket3">
-                                        </div>
-                                            <div class="col3"></div>
-                                    </div>
-            
-                                    <div class="form-group row">
-                                        <label class="col-3 col-form-label">Event Profile Photo</label>
-                                        <div class="col-3">
-                                            
-                                        <input type="file" name="fileToUpload" id="fileToUpload">
-                                        </div>
-                                        
-                                        <label class="col-2 col-form-label">Event Photo 2</label>
-                                        <div class="col-4">
-                                            
-                                        <input type="file" name="fileToUpload2" id="fileToUpload2">
-                                        </div>
-                                        
-                                    </div>
-                                        
-                                        <div class="col-12"><hr></div>
-                                        <div class="col-4"></div>
-                                        <div class=" col-3col align-self-center">
-                                            <div class="form-group">
-                                             
-                                        <div class="col-sm-12">
-                                            <input type="hidden" name="manager_id" value= " '. $id .' " >
-                                            <input type="hidden" name="date" value= " '.$date.' " >
-                                            <input type="submit" class="btn btn-success" value="Create Event"  name="create_event">
-                                            
-                                            
-                                            
-                                        </div>
-                                        </div>
-                                            
-                                            
-                                        
-                                       </form> 
-
-                                    ';    
-                                
-
-
-                                }
-
-
-
-                                else{  
-                                    echo '
+                                    $Query = "SELECT * FROM tempevents WHERE date = .$date ";
+                                            $Result= mysqli_query($connection, $Query);
+                                            if (mysqli_num_rows($Result) ==0 ) {
+                                                $freedate = 1;
+                                            }
+                                            else{
+                                                $freedate = 0;
+                                                echo '
 
                                             <div class="alert alert-success" role="alert">
-                                              <h4 class="alert-heading">select A Date To book the Auditorium</h4>
+                                              <h4 class="alert-heading">Date is Not Avilable.</h4>
                                               <hr>
-                                              <p class="mb-0">Ada indala dawas 120 kata passe tamai bok kaanna pluwan</p>
+                                              <p class="mb-0">Plese Cheak avilable dates and book aain</p>
                                             </div>
 
                                             ';
-                                }
+                                            }
 
 
+
+                                            if ($freedate == 1){
+
+                                                echo '
+                                                    <form action="create_event_submit.php" method="post" enctype="multipart/form-data">
+                                                    <div class="form-group row">
+                                                          <label for="example-text-input" class="col-2 col-form-label">Event Name</label>
+                                                          <div class="col-5">
+                                                            <input class="form-control" type="text" id="example-text-input" name="name">
+                                                          </div>
+                                                        </div>
+                                                        
+                                                        <div class="form-group row">
+                                                          <label for="example-text-input" class="col-2 col-form-label">Event Heading</label>
+                                                          <div class="col-7">
+                                                            <input class="form-control" type="text" id="example-text-input" name="h1">
+                                                          </div>
+                                                        </div>
+                                                    
+                                                    
+                                                        <div class="form-group row">
+                                                           
+                                                            <label for="example-time-input" class="col-2 col-form-label">Time</label>
+                                                            <div class="col-2">
+                                                                <input class="form-control" type="time" value="13:45:00" id="example-time-input" name="time">
+                                                            </div>
+                                                         
+                                                        </div>
+
+                                                    <div class="form-group row">
+                                                            <label for="example-url-input" class="col-2 col-form-label">Website</label>
+                                                            <div class="col-10">
+                                                                <input class="form-control" type="url" placeholder="https://website.com" id="example-url-input" name="web_url">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label for="example-url-input" class="col-2 col-form-label">Facebook URL</label>
+                                                            <div class="col-10">
+                                                                <input class="form-control" type="url" placeholder="https:/facebook.com" id="example-url-input" name="fb_url">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label for="example-url-input" class="col-2 col-form-label">Twitter URL</label>
+                                                            <div class="col-10">
+                                                                <input class="form-control" type="url" placeholder="https://twitter.com" id="example-url-input" name="twitter_url">
+                                                            </div>
+                                                        </div>
+                                                    <div class="form-group row">
+                                                            <label for="example-url-input" class="col-2 col-form-label">Google + URL </label>
+                                                            <div class="col-10">
+                                                                <input class="form-control" type="url" placeholder="https://googleplus.com" id="example-url-input" name="google_url">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            
+                                                              <label for="comment" class="col-2 col-form-label">Event Discription</label>
+                                                            <div class="col-10">
+                                                              <textarea class="form-control" rows="5" id="example-text-input" name="description" placeholder="DIscrive Your Event"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label for="example-text-input" class="col-3 col-form-label">Ticket price (VIP)</label>
+                                                            <div class="col-6">
+                                                                <input class="form-control" type="number" id="example-text-input" name="ticket1">
+                                                            </div>
+                                                                <div class="col3"></div>
+
+                                                        </div>
+                                                    
+                                                        <div class="form-group row">
+                                                            <label for="example-text-input" class="col-3 col-form-label">Ticket price First class</label>
+                                                            <div class="col-6">
+                                                                <input class="form-control" type="number" id="example-text-input" name="ticket2">
+                                                            </div>
+                                                                <div class="col3"></div>
+
+                                                        </div>
+                                                    
+                                                         <div class="form-group row">
+                                                            <label for="example-text-input" class="col-3 col-form-label">Ticket price Second class</label>
+                                                            <div class="col-6">
+                                                                <input class="form-control" type="number" id="example-text-input" name="ticket3">
+                                                            </div>
+                                                                <div class="col3"></div>
+                                                        </div>
+                                
+                                                        <div class="form-group row">
+                                                            <label class="col-3 col-form-label">Event Profile Photo</label>
+                                                            <div class="col-3">
+                                                                
+                                                            <input type="file" name="fileToUpload" id="fileToUpload">
+                                                            </div>
+                                                            
+                                                            <label class="col-2 col-form-label">Event Photo 2</label>
+                                                            <div class="col-4">
+                                                                
+                                                            <input type="file" name="fileToUpload2" id="fileToUpload2">
+                                                            </div>
+                                                            
+                                                        </div>
+                                                            
+                                                            <div class="col-12"><hr></div>
+                                                            <div class="col-4"></div>
+                                                            <div class=" col-3col align-self-center">
+                                                                <div class="form-group">
+                                                                 
+                                                            <div class="col-sm-12">
+                                                                <input type="hidden" name="manager_id" value= " '. $id .' " >
+                                                                <input type="hidden" name="date" value= " '.$date.' " >
+                                                                <input type="submit" class="btn btn-success" value="Create Event"  name="create_event">
+                                                                
+                                                                
+                                                                
+                                                            </div>
+                                                            </div>
+                                                                
+                                                                
+                                                            
+                                                           </form> 
+
+                                                        ';    
+                                              }
+
+
+
+                                            else{  
+                                                echo '
+
+                                                        <div class="alert alert-success" role="alert">
+                                                          <h4 class="alert-heading">select A Date To book the Auditorium</h4>
+                                                          <hr>
+                                                          <p class="mb-0">Ada indala dawas 120 kata passe tamai bok kaanna pluwan</p>
+                                                        </div>
+
+                                                        ';
+                                            }
+
+                                    }
 
                                 ?>
 								

@@ -44,17 +44,29 @@
 	</nav>
 	</section>
 	<div class="simple-form">
+      <div class="alert alert-info">
+        <h4><?php include_once('../includes/message.php'); ?></h4>
+      </div>
 		<form id="registration" action="register_submit.php" method="post" role="form" >
 			<input type="text" name="f_name"  id="button"  placeholder="Enter Your First Name" required><br><br>
 			<input type="text" name="l_name"  id="button"  placeholder="Enter Your Last Name " required><br><br>
 			<input type="email" name="email"  id="button" placeholder="Enter Your E-mail" required><br><br>
-			<input type="password" name="password"  id="button" placeholder="Enter Your Password" required onkeyup='check()'><br><br>
-			<input type="password" name="confirm-password"  id="button" placeholder="Retype Your Password" required onkeyup='check()'>
-      <span id='message' ></span><br><br>
+			<input type="password" name="password" class="button" id="password" placeholder="Enter Your Password" required onkeyup='check()'><br><br>
+			<input type="password" name="confirm-password" class="button" id="confirm-password" placeholder="Retype Your Password" required onkeyup='check()'>
+      <br>
+      <div>
+          <span id='message' class="spn" ></span><br><br>
+      </div>
+      
       <input type="number" name="mobile" id="button" tabindex="6" placeholder="Mobile Number" required><br><br>
   
 
-			<input type="submit" value="register" id="butt" >
+			<input type="submit" value="I want to Buy Tickets" id="butt" name="customer" >
+      <input type="submit" value="I want to Create events" id="butt" name="event-manager">
+
+      <div class="form-group">
+          <a href="registration.php"><input type="button"  name= "login-submit" value="Aledy Have an Account ? Log in hear" id="butt2" ></a>
+      </div>
 
       <!--<form id="register-form" action="register_submit.php" method="post" role="form" >-->
                   <!-- <div class="form-group">
@@ -80,7 +92,7 @@
                                     
                                     <div class="row">
                                         <div class="form-group">
-                      <p style="text-align: center;"> Choos any option</p>
+                      <p style="text-align: center;" class="spn" > Choos any option</p>
                      </div>
                                     </div>
 
@@ -98,4 +110,20 @@
 	</div>
 </section>
 </body>
+
+
+<script>
+        var check = function() {
+            if (document.getElementById('password').value == document.getElementById('confirm-password').value){
+                    document.getElementById('message').style.color = 'green';
+                    document.getElementById('message').innerHTML = 'Password is matching';
+            } 
+            else{
+                document.getElementById('message').style.color = 'red';
+                document.getElementById('message').style.backgroundColor = 'white';
+                document.getElementById('message').innerHTML = 'Password does not match';
+            }
+        }
+</script>
+
 </html>
