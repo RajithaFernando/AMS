@@ -16,7 +16,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark primary-color">
 
   <!-- Navbar brand -->
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="../index.php"><h1 style="font: normal 28px Cookie, Arial, Helvetica, sans-serif; line-height: 40px; color:#ffff; ">aUDITORIUM</h1></a>
 
   <!-- Collapse button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -30,37 +30,40 @@
     <!-- Links -->
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home
-          <span class="sr-only">(current)</span>
+        <a class="nav-link" href="../index.php">Home
+          <!-- <span class="sr-only">(current)</span> -->
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
+        <a class="nav-link" href="customer.php">Customrers</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
+        <a class="nav-link" href="e_manager.php">Event Manager</a>
       </li>
 
       <!-- Dropdown -->
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">Dropdown</a>
-        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
+      <!-- <li class="nav-item dropdown"> -->
+        <!-- <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" -->
+          <!-- aria-expanded="false">Dropdown</a> -->
+        <!-- <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink"> -->
+          <!-- <ul> -->
+          <!-- <a class="dropdown-item" href="#">Action</a> -->
+          <!-- <a class="dropdown-item" href="#">Another action</a> -->
+          <!-- <a class="dropdown-item" href="#">Something else here</a> -->
+          <!-- </ul> -->
+          
+        <!-- </div> -->
+      <!-- </li> -->
 
     </ul>
     <!-- Links -->
 
-    <form class="form-inline">
-      <div class="md-form my-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-      </div>
-    </form>
-  </div>
+    <!-- <form class="form-inline"> -->
+      <!-- <div class="md-form my-0"> -->
+        <!-- <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"> -->
+      <!-- </div> -->
+    <!-- </form> -->
+  <!-- </div> -->
   <!-- Collapsible content -->
 
 </nav>
@@ -81,61 +84,67 @@
     
     <div class="card">
 
-          
           <div class="card-body">
             <div class="text-center  " style="padding: 25px; ">
                 <h3 style="color:#2C3E50" >Choose Reports</h3>
-                <h4> <label for="Choose Report"  style="color:#E74C3C">Year</label></h4>
-                <div class="input-group"><span class="input-group-addon"><span class="glyphicon glyphicon-tasks"></span></span>
-                    <form action="form.php" method="post">
-                  <input type="" name="year" class="form-control">
-                              </br><input type="submit" name="submityear" value="Get Report" class="btn btn-primary btn-lg btn3d" >
-                              </div> 
 
-      </div>
+                <h4> <label for="Choose Report"  style="color:#E74C3C">Year</label></h4>
+                
+                    <form action="form1.php" method="post">
+                    <input type="" name="year" class="form-control">
+                              </br><input type="submit" name="submit" value="Get Report" class="btn btn-primary btn-lg btn3d" >
+           
+                    </form>
+             </div> 
+          </div>
      
 
-          </div>
+    </div>
 
-      </div>
+     
       
       
-      <div class="card" style="margin-left:150px;width:3\400px">
+      <div class="card" >
 
           
           <div class="card-body">
 
-           <div  style="padding: 15px ;  ">
+           <div class="text-center" style="padding:25px;" >
                 <h3 style="color:#2C3E50" >Choose Reports</h3>
-                <h4> <label for="Choose Report"  style="color:#E74C3C">Month</label></h4>
-                <div class="input-group"><span class="input-group-addon"><span class="glyphicon glyphicon-tasks"></span>
-                      <form action="form.php" method="post">
-                      <!-- <select class="form-control" name="month" > -->
-                      <!-- <option value="1" selected>January</option> -->
-                      <!-- <option value="2">February</option> -->
-                      <!-- <option value="3">March</option> -->
-                      <!-- <option value="4">April</option> -->
-                      <!-- <option value="5">May</option> -->
-                      <!-- <option value="6">June</option> -->
-                      <!-- <option value="7">July</option> -->
-                      <!-- <option value="8">August</option> -->
-                      <!-- <option value="9">September</option> -->
-                      <!-- <option value="10">October</option> -->
-                      <!-- <option value="11">November</option> -->
-                      <!-- <option value="12">December</option> -->
+                <h4> <label for="Choose Report"  style="color:#E74C3C">Year & Month</label></h4>
+                
+                     
+               <form action="form.php" method="post">    
+                    </br><input type="" name="year" class="form-control">
+                    
+                     
+                 
+                      <select class="form-control" name="month" > 
+                      <option value="1" selected>January</option> 
+                      <option value="2">February</option> 
+                      <option value="3">March</option> 
+                      <option value="4">April</option> 
+                      <option value="5">May</option> 
+                      <option value="6">June</option> 
+                      <option value="7">July</option> 
+                      <option value="8">August</option> 
+                      <option value="9">September</option> 
+                      <option value="10">October</option> 
+                      <option value="11">November</option> 
+                      <option value="12">December</option> 
                                     
-                      <!-- </select> -->
-                      <!-- <input type="" name="year" class="form-control"> -->
+                       </select> 
 
-                      </br><input type="" name="month" class="form-control">
+
+                     
 
                       </br><input type="submit" name="submit" value="Get Report" class="btn btn-primary btn-lg btn3d"  >
-
+                    </form>
                 </div> 
 
           </div>
 
-      </div>
+      
       
                                                        
                               

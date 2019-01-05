@@ -4,7 +4,7 @@
 
 if(!isset($_SESSION['usertype']) || $_SESSION['usertype'] != 'e'){
        $message = base64_encode(urlencode("Please Login"));
-       header('Location:../../login.php?msg=' . $message);
+       header('Location:../includes/login.php?msg=' . $message);
        exit();
        }
        $mid = $_SESSION['id'];
@@ -96,7 +96,7 @@ if(!isset($_SESSION['usertype']) || $_SESSION['usertype'] != 'e'){
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             
                             <!-- Light Logo icon -->
-                            <img src="images/logo.png" width="90" height="60" alt="">
+                            <img src="images/logo1.jpg" width="90" height="60" alt="">
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text --><span>

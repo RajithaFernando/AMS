@@ -37,9 +37,9 @@
 	 $obj_pdf->SetFont('helvetica','',11);
 	 $obj_pdf->AddPage();
 	$content='';
-	$content .='<h4 align="center">Genarate Reports</h4><br /><table border="1" cellingspacing="0" cellpadding="3">
+	$content .='<h4 align="center"> Monthly Sales</h4><br /><table border:1; cellingspacing:0; cellpaddin:3>
 	<tr>
-	  <th >Name</th>
+	  <th>Name</th>
 	  <th >manager_id</th>
 	  <th >Web Url</th>
 	  <th >status</th>
@@ -50,10 +50,10 @@
 function fetch_date(){
 	include('../includes/connection.php') ;
 $output='';
-$month=$_POST['month'];
+ $month=$_POST['month'];
 $year=$_POST['year'];
-  $startdate="$year-01-01";
-  $enddate="$year-12-31";
+  $startdate="$year-$month-01";
+  $enddate="$year-$month-31";
   $sql="SELECT * FROM events WHERE date between '$startdate' and '$enddate'"  ;
   $query=mysqli_query($connection,$sql);
  

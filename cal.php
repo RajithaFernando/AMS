@@ -14,7 +14,7 @@
 
 	  <div class="row">
 
-		<?php include('/includes/connection.php') ?>
+		<?php include('includes/connection.php') ?>
 	<?php 
 	$events = 'SELECT * FROM tempEvents WHERE status="confirmed" ' ;//ORDER BY date' ; //Selecting all data from events table 
 	$query = mysqli_query($connection, $events); //Passing SQL

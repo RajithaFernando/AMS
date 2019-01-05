@@ -471,10 +471,10 @@
 
 			today = yyyy+'-'+mm+'-'+dd;
 			document.getElementById("datefield").setAttribute("min", today);
-			var duration = 100; //In Days
-			int days = 100;
-			var newDate = today.setDate(cur.getDate() + 100);
-			document.getElementById("datefield").setAttribute("max", newDate);
+			// var duration = 100; //In Days
+			// int days = 100;
+			// var newDate = today.setDate(cur.getDate() + 100);
+			// document.getElementById("datefield").setAttribute("max", newDate);
 			
 			 
 	

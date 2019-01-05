@@ -1,0 +1,29 @@
+body{
+	margin:0;
+	padding: 0;
+	/*background-image: url(../image/1.JPG);*/
+	background-image: linear-gradient(to bottom, gray, #666633);
+
+}
+.container
+{
+	margin-top:10px;
+	color:black;
+
+}
+.col-md-4
+{
+	margin-top: 10px;
+	margin-bottom: 18px;
+	
+}
+ 
+img:hover
+{
+	transform: scale(1.1);
+	transition: 1s;
+}
+#Footer p
+{
+color: white;
+}

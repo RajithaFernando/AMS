@@ -2,7 +2,16 @@
 
 <html>
 
-<head>
+<head><title>auditorium</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" >
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
@@ -33,7 +42,38 @@ Include the above in your HEAD tag ---------->
 </head>
 <body>
    
-    <?php include('includes/hedder.php') ?>
+       <section id="nav-bar">
+        <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#"><b>Auditorium Management System</b></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                    <a class="nav-link" href="#top">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">EVENT</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">GALLERY</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#about">ABOUT US</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#services">SERVICES</a>
+
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#contact">CONTACT US</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </nav>
+        </section>
     <?php
     
     $events = 'SELECT * FROM tempevents WHERE status ="confirmed" ORDER BY date DESC' ; //Selecting all data from events table 
@@ -162,5 +202,13 @@ Include the above in your HEAD tag ---------->
 			</div>
 		</div>
 	</div>
+
+
+    <section id="Footer">
+  <div class="container text-center">
+    <p>copy right<i class="fa fa-copyright"></i></p>
+    
+  </div>
+</section>
 
 </body>

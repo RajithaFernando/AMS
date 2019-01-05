@@ -1,0 +1,297 @@
+*
+{
+	margin: 0;
+	padding: 0;
+}
+/*-----Navigation-----*/
+#nav-bar{
+	position: sticky;
+	color:white;
+	top: 0;
+	z-index: 10;
+
+
+ }
+.navbar-brand h1
+{
+	padding-left: 30px;
+	font-size: 20px;
+	font-family: "Robosto";
+
+}
+
+.navbar-brand{
+	color: white !important;
+
+}
+ 
+
+.navbar-nav li
+{
+	padding: 0 10px;
+}
+.navbar-nav li a
+{
+	float: right;
+	text-align: left;
+}
+#nav-bar ul li a:hover
+{
+	color: #007bff!important;
+}
+.navbar
+{
+	background:#0E0000 !important;
+}
+.navbar-toggler
+{
+	border:none!important;
+}
+.nav-link{
+	color: #fff!important;
+	font-weight: 600;
+	font-size:16px;
+}
+ /*-----Slider-----*/
+ #slider
+{
+	width:100%;
+}
+.carousel-caption
+{
+	top:35%;
+	transform: translateY(-50%);
+	bottom:initial!important;
+	z-index: 1 !important;
+}
+ 
+ .carousel-caption h5
+{
+ 	color:#fff;
+ 	font-size: 42px;
+
+}
+.carousel-indicators{
+	z-index: 1 !important;
+}
+
+ .carousel-button
+{
+	margin-top: 30px;
+	margin-left: 70px;
+}
+.carousel-button .btn  
+{
+	border:1px solid white;
+	padding:5px 0px;
+	color: white;
+	text-decoration:none;
+	margin-right: 13px;
+	font-size: 20px;
+	text-transform: uppercase;
+	text-align: center;
+	background-color: darkorange;
+	font-family: "Roboto" "sans-serif";
+	padding-left: 50px;
+	padding-right: 50px;
+	transition: all 0.5s ease in;
+}	 
+
+ 
+
+.carousel-button .btn btn-two:hover
+{
+	background-color:darkorange;
+	transition: all 0.5s ease in;
+}
+
+/*----------About-------*/
+
+#about
+{
+	padding-top:80px;
+	padding-bottom: 50px;
+	color:#555;
+}
+#about .btn
+{
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+.about-content
+{
+	padding-top: 20px;
+ }
+.skills-bar img
+{
+	height: 400px;
+	width: 600px;
+
+}
+/*.progress-bar
+{
+	border-radius:16px;
+
+}
+.progress
+{
+	border-radius: 16px !important;
+	margin-bottom: 20px; 
+}
+/*-------services------*/
+#reservation
+{
+	background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(../image/1.JPG);
+	background-size:cover;
+	background-position:center;
+	color:#efefef !important;
+	background-attachment: fixed;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+#reservation h1
+{
+	text-align:center;
+	color: #efefef !important;
+	padding-bottom: 10px;
+
+}
+#reservation h1::after
+{
+	content:'';
+	background:#efefef;
+	display: block;
+	height:3px;
+	width:170px;
+	margin:20px auto 5px;
+}
+.reservation
+{
+	margin-top:40px;
+}
+.icon
+{
+	font-size:40px;
+	margin:20px auto;
+	padding:20px;
+	height:80px;
+	width:80px;
+	border:1px solid #fff;
+	border-radius: 50%;
+
+}
+#reservation p
+{
+	font-size: 14px;
+	margin-top:20px;
+	color: #ccc;
+
+}
+.reservation .col-md-6:hover
+{
+	background:#007bff;
+	cursor:pointer;
+	transition: 0.7s;
+
+}
+
+.reservation .col-md-6 h3
+{
+  text-align: center;
+}
+.abc{
+	margin-left: 100px;
+}
+
+/*.table
+{
+	text-align: center;
+	border-style: none;
+	border-top: none;
+
+}
+/*.list ul li
+{
+	list-style-type:disc;
+	list-style-position: 50px;
+}
+/*------get in touch------*/
+#contact
+{
+	padding-top: 50px;
+	padding-bottom: 50px;
+	color:#555;
+
+}
+h1
+{
+	text-align:center;
+	color:#555 !important;
+	padding-bottom: 10px;
+
+}
+h1::after
+{
+	content:'';
+	background:#007bff;
+	display: block;
+	height: 3px;
+	width: 170px;
+	margin: 20px auto 5px;
+
+}
+#contact
+{
+	background:#efefef;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	color: #777;
+
+}
+.contact-form
+{
+	padding: 15px;
+}
+
+.form-control
+{
+	border-radius:0 !important;
+	border:none !important;
+
+}
+::placeholder
+{
+	color: #999 !important;
+}
+.follow
+{
+	background: #fff;
+	padding: 10px;
+	margin: 15px;
+
+}
+.contact-info .fa
+{
+	margin: 10px;
+	color: #007bff;
+	font-weight: bold;
+}
+/*----Footer---*/
+
+#Footer
+{
+ background:black;
+ color:white;
+ padding:12px;
+ /*margin-top: 1500px;*/
+ /*bottom:0;
+ position: absolute;
+ width: 100%;*/
+
+}
+
+.fa-copyright
+{
+	margin:3px;
+	color:red;
+}

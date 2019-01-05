@@ -33,7 +33,7 @@ $ticket3 = $_POST['ticket3'];
 //$sss = "INSERT INTO `events` (`id`, `name`, `manager_id`, `date`, `time`, `web_url`, `fb_url`, `twitter_url`, `google_url`, `description`, `image`, `ticket1`, `ticket2`, `ticket3`) VALUES (NULL, 'a', '22', '2018-09-05', '05:00:00', '1', '1', '1', '11', '1', '1', '1', '1', '1')";
 
 
-$event = "INSERT INTO events (name , manager_id , date , time , web_url , fb_url , twitter_url , google_url , description , image , ticket1 , ticket2 , ticket3) VALUES ('$name' , '$manager_id' , '$date' , '$time' , '$web_url' , '$fb_url' , '$twitter_url' , '$google_url' , '$description' , '$image' , '$ticket1' , '$ticket2' , '$ticket3')";
+$event = "INSERT INTO tempevents (name , manager_id , date , time , web_url , fb_url , twitter_url , google_url , description , image , ticket1 , ticket2 , ticket3) VALUES ('$name' , '$manager_id' , '$date' , '$time' , '$web_url' , '$fb_url' , '$twitter_url' , '$google_url' , '$description' , '$image' , '$ticket1' , '$ticket2' , '$ticket3')";
  
 //mysqli_query($connection,$event); 
 if (mysqli_query($connection,$event) === TRUE) {
