@@ -113,8 +113,9 @@
         <li class="nav-item">
           <a class="nav-link" href="viewnoseat.php">
             <i class="fas fa-fw fa-table"></i>
-            <span>Update</span></a>
+            <span>Update Seat</span></a>
         </li>
+
       </ul>
 
       <div id="content-wrapper">
@@ -124,56 +125,45 @@
           <!-- Breadcrumbs-->
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
-              <h1>Event Confirmation</h1>
+              <h1>Update Seat</h1>
             </li>
             <!-- <li class="breadcrumb-item active">Overview</li> -->
           </ol>
 </div>
    <div class="container">
-    <div class="col-8"> 
-      <table class="table table-bordered">
-  <thead>
-    <tr>
-      <th scope="col">Name</th>
-      <th scope="col">RefNo</th>
-      <th scope="col">Date</th>
-      <th scope="col">Confirm</th>
-    </tr>
-
-  </thead>
+     
+     <div class="col-8"> 
+      
    <?php
-    $sql="SELECT * FROM tempevents WHERE status='not confirmed'";
+    $sql="SELECT * FROM seats WHERE name='1'";
     
     $result=mysqli_query($connection,$sql);
-    while($row=mysqli_fetch_array($result)){
+    $row=mysqli_fetch_array($result);
   ?>
-  <tbody>
-    <tr>
-      <th ><?php echo $row['name']; ?></th>
-      <td><?php echo $row['refNo']; ?></td>
-      <td><?php echo $row['date']?></td>
+      <form action="updateseat.php" method="post">
+        VIP:<br>
+        <input type="text" name="vip" value="<?php echo $row['vip']; ?>" ><br>
+        First Class:<br>
+        <input type="text" name="fc" value="<?php echo $row['fc']; ?>" ><br>
+        Second Class:<br>
+        <input type="text" name="sc" value="<?php echo $row['sc']; ?>" ><br>
+        
+        <input type="submit" name="Update" value="Update" class="btn btn-outline-primary"><br>
+      </form>
       
-      <td><form action="eventconfirmation.php" method="post">
-        <input type="hidden" name="refNo" value="<?php echo $row['refNo']; ?>">
-        <input type="submit" name="confirm" value="confirm" class="btn btn-outline-primary">
-      </form></td>
-    </tr>
-   <?php
 
 
- }
-    ?>
-  </tbody>
-</table>
-</div>
-  
+
+        
+
+
 
     
-</div>
    
-   </div>     
-        
-<div>
+ 
+</div>
+   </div>
+    
         <!-- Sticky Footer -->
         <footer class="sticky-footer">
           <div class="container my-auto">

@@ -29,7 +29,7 @@
 
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-      <a class="navbar-brand mr-1" href="index.html">Auditorium Management System</a>
+      <a class="navbar-brand mr-1" href="index.php">Auditorium Management System</a>
 
       <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-bars"></i>
@@ -108,6 +108,11 @@
           <a class="nav-link" href="../Admin/lite/create_event.php">
             <i class="fas fa-fw fa-table"></i>
             <span>Create Event</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="viewnoseat.php">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Update Seat</span></a>
         </li>
       </ul>
 

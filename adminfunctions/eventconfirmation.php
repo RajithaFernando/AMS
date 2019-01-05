@@ -6,7 +6,12 @@ $sql="UPDATE tempEvents
 SET status= 'confirmed' 
 WHERE refNo ='$refNo'";
 
-$query=mysqli_query($connection,$sql);
+if ($query=mysqli_query($connection,$sql)===true){
+ header("Location:event_confirm.php");
+}
+
+  ;
+
 
 
 

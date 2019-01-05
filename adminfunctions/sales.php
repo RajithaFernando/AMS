@@ -1,4 +1,6 @@
 <?php include('../includes/connection.php') ?>
+
+
 <!DOCTYPE html>
 
   <head>
@@ -109,6 +111,11 @@
             <i class="fas fa-fw fa-table"></i>
             <span>Create Event</span></a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="viewnoseat.php">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Update Seat</span></a>
+        </li>
       </ul>
 
       <div id="content-wrapper">
@@ -128,14 +135,15 @@
      
       <div class="card" style="margin-left: 250px;margin-top:100px">
         <div class="card-body" style="width: 500px;   ">
-          <div class="text-center" style="padding:25px;" >
+          <div class="text-center" style="padding:25px; " >
             <h3 style="color:#2C3E50" >sales Reports</h3>
                 <h4> <label for="Choose Report"  style="color:#E74C3C">Monthly</label></h4>
                 
                      
                 <form action="form3.php" method="post">    
-                  </br><input type="" name="year" class="form-control">
-                    
+                  </br>
+                  <input type="text" name="year" placeholder="YEAR" class="form-control"><br>
+                  
                      
                  
                       <select class="form-control" name="month" > 
@@ -207,7 +215,7 @@
           <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
+            <a class="btn btn-primary" href="#">Logout</a>
           </div>
         </div>
       </div>

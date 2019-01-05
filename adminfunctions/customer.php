@@ -109,6 +109,11 @@
             <i class="fas fa-fw fa-table"></i>
             <span>Create Event</span></a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="viewnoseat.php">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Update Seat</span>
+        </li>
       </ul>
 
       <div id="content-wrapper">
