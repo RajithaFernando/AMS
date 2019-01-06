@@ -1,5 +1,5 @@
 <?php include('../includes/connection.php') ?>
-<?php include('../../includes/session.php') ?>
+<?php include('../includes/session.php') ?>
 <?php
 checkSession(); 
 if(!isset($_SESSION['usertype']) || $_SESSION['usertype'] != 'm'){

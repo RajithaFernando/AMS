@@ -1,20 +1,25 @@
-<?php include('../../includes/session.php') ?>
+
 <?php include('../../includes/connection.php') ?>
+<?php include('../../includes/session.php') ;
 
 
-  <?php 
-  checkSession();
+include('../../includes/message.php');
+?>
+ 
 
-  if(!isset($_SESSION['usertype']) || $_SESSION['usertype'] != 'e' || $_SESSION['usertype'] != 'm'){
-    $message = base64_encode(urlencode("Please Login"));
-    header('Location:../../html/login.php?msg=' . $message);
-    exit();
-}
+  <?php checkSession();
+    if($_SESSION['usertype'] == 'c' ){
+       $message = base64_encode(urlencode("Please Login"));
+       // header('Location:../../html/login.php?msg=' . $message);
+       // exit();
+       }
+
 
                        
-    $id = $_SESSION["id"]; 
-?>
+     $id = $_SESSION["id"]; 
 
+    ?>
+ 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -401,7 +406,7 @@
                                                         <div class="alert alert-success" role="alert">
                                                           <h4 class="alert-heading">select A Date To book the Auditorium</h4>
                                                           <hr>
-                                                          <p class="mb-0">Ada indala dawas 120 kata passe tamai bok kaanna pluwan</p>
+                                                          <p class="mb-0">You can Book Up to 120 days forward from today</p>
                                                         </div>
 
                                                         ';

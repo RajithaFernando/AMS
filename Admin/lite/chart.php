@@ -1,12 +1,13 @@
 <?php include('../../includes/connection.php') ?>
 <?php include('../../includes/session.php') ?>
-<?php checkSession(); 
+<?php 
+checkSession(); 
 
-if(!isset($_SESSION['usertype']) || $_SESSION['usertype'] != 'e'){
-       $message = base64_encode(urlencode("Please Login"));
-       header('Location:../../login.php?msg=' . $message);
-       exit();
-       }
+// if(!isset($_SESSION['usertype']) || $_SESSION['usertype'] != 'e'){
+//        $message = base64_encode(urlencode("Please Login"));
+//        header('Location:../../login.php?msg=' . $message);
+//        exit();
+//        }
 
     $ref= $_POST['refNo'];
        

@@ -1,8 +1,8 @@
 
 
 
-<?php include('../includes/connection.php') ;
-include('session.php');
+<?php include('../../includes/connection.php') ;
+include('../../includes/connection.php');
 include('message.php');?>
 
 
@@ -10,12 +10,12 @@ include('message.php');?>
 
   <?php checkSession();
                        
-     // $id = $_SESSION["id"]; 
+     $id = $_SESSION["id"]; 
     
   
 
 $name = $_POST['name'];
-$manager_id = '12';
+$manager_id = $id
 $date = $_POST['date'];
 $time  = $_POST['time'];
 $web_url  = $_POST['web_url'];

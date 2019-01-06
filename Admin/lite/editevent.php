@@ -7,9 +7,9 @@ include('../../includes/message.php');
  
 
   <?php checkSession();
-    if(!isset($_SESSION['usertype']) || $_SESSION['usertype'] != 'e'){
+    if($_SESSION['usertype'] != 'e'){
        $message = base64_encode(urlencode("Please Login"));
-       header('Location:login.php?msg=' . $message);
+       header('Location:../../html/login.php?msg=' . $message);
        exit();
        }
 

@@ -7,6 +7,10 @@ if(!isset($_SESSION['usertype']) || $_SESSION['usertype'] != 'c'){
        header('Location:../html/login.php?msg=' . $message);
        exit();
        }
+
+// $_SESSION['event'] = $_POST['ref'];
+
+
        
 ?>
 <?php 

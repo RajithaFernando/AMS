@@ -24,7 +24,7 @@ if (isset($_POST['card']) || isset($_POST['sub']))
 		$count = $_POST['count'];
 
 		$val = $_POST['val'];
-		$_SESSION['paid'] == "Not Paied"  ;
+		$_SESSION['paid'] = "Not Paied"  ;
 	}
 
 ?>

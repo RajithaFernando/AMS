@@ -5,7 +5,7 @@
 // include('../../includes/message.php');
 
 include('../../includes/connection.php');
-include('../../includes/session.php');
+
 include('../../includes/message.php');
 
 
@@ -32,7 +32,7 @@ $min = date('i');
 $sec = date('s');
 
 $refCode = $year.$month.$day.$hour.$min.$sec;
-settype($refCode, "integer");
+// settype($refCode, "integer");
 
 // echo $refCode;
 
@@ -206,7 +206,7 @@ $imageName2 = $_FILES["fileToUpload2"]["name"];
  
 
 $event = "INSERT INTO `tempevents` (`refNo`, `name`, `h1`,  `manager_id`, `date`, `time`, `web_url`, `fb_url`, `twitter_url`, `google_url`, `description`, `image`, `image2`, `ticket1`, `ticket2`, `ticket3`, `status`) 
-VALUES ('$refCode', '$name', '$h1',   '$manager_id', '$date', '$time', '$web_url', '$fb_url', '$twitter_url', '$google_url', '$description', '$imageName', '$imageName2',  '$ticket1', '$ticket2', '$ticket3' , 'not confirmed');";
+VALUES ('$refCode', '$name', '$h1',   '$manager_id', '$date', '$time', '$web_url', '$fb_url', '$twitter_url', '$google_url', '$description', '$imageName', '$imageName2',  '$ticket1', '$ticket2', '$ticket3' , 'not confirmed')";
  
 
 // mysqli_query($connection,$event); 

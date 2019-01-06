@@ -2,11 +2,13 @@
 <?php include('../../includes/session.php') ?>
 <?php checkSession(); 
 
-if(!isset($_SESSION['usertype']) || $_SESSION['usertype'] != 'e'){
+if($_SESSION['usertype'] == 'c' ){
        $message = base64_encode(urlencode("Please Login"));
-       header('Location:../includes/login.php?msg=' . $message);
+       header('Location:../../html/login.php?msg=' . $message);
        exit();
        }
+
+       
        $mid = $_SESSION['id'];
     //    echo $mid;
        $query1 = "SELECT  refNo , name  FROM tempEvents WHERE manager_id = $mid  AND status='confirmed' order by date";
