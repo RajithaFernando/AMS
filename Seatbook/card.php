@@ -1,6 +1,32 @@
+<?php include('../includes/connection.php') ?>
+<?php include('../includes/session.php') ?>
+
+<?php checkSession(); 
+
+if(!isset($_SESSION['usertype']) || $_SESSION['usertype'] != 'c'){
+       $message = base64_encode(urlencode("Please Login"));
+       header('Location:../html/login.php?msg=' . $message);
+       exit();
+       }
+       
+       ?>
+
+
 <?php 
+if (isset($_POST['card'])){
+		
+		$userID = $_SESSION['id'];
+		$Date = date("Y-m-d");
+		$eventRef $_SESSION['event'] ;
+		$seatID = "1";
+		$ticketValue = $_POST['pr'] ;
+		$Catagory = $_POST['Catagory'] ;
+		$count = $_POST['count']
+}
 
 ?>
+
+
 <html>
 <head>
 	<meta charset="utf-8">
@@ -172,7 +198,9 @@
                         
                         <div class="row">
                             <div class="col-xs-12">
-                                <button class="subscribe btn btn-success btn-lg btn-block"  onclick="myFunction()">Start Subscription</button>
+                            	<form method="post">
+                                	<button type="submit" name="sub" class="subscribe btn btn-success btn-lg btn-block"  onclick="myFunction()">Start Subscription</button>
+                            	</form>
                             </div>
                         </div>
                         <div class="row" style="display:none;">
@@ -182,7 +210,21 @@
                         </div>
                     </form>
                 </div>
-            </div>            
+            </div> 
+
+
+
+            <?php 
+            if (isset($_POST['sub']))
+            	Query = "INSERT INTO sales ( userID , Date , eventRef , seatID , ticketValue , Catagory) VALUES ('$userID', '$Date', '$eventRef', '$seatID', '$ticketValue', '$Catagory')";
+            
+            
+            for ($i=0;$i<$count; $i ++){
+            	(mysqli_query($connection,$Query);
+
+            	}
+            
+            ?>          
             <!-- CREDIT CARD FORM ENDS HERE -->
             
             

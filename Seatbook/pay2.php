@@ -1,7 +1,15 @@
 <?php include('../includes/connection.php') ?>
 <?php include('../includes/session.php') ?>
 
+<?php checkSession(); 
 
+if(!isset($_SESSION['usertype']) || $_SESSION['usertype'] != 'c'){
+       $message = base64_encode(urlencode("Please Login"));
+       header('Location:../html/login.php?msg=' . $message);
+       exit();
+       }
+       
+       ?>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -78,17 +86,20 @@
 					
           $mul = $_POST["count1"];
           $pr = $_POST['pr'];
+          $Catagory = 1;
 					
 				}elseif (isset($_POST["nos2"])) {  
 					
           $mul = $_POST["count2"];
           $pr = $_POST['pr'];
+          $Catagory = 2;
 					
 				}
 				elseif (isset($_POST["nos3"])) {  
 					
           $mul = $_POST["count3"];
           $pr = $_POST['pr'];
+          $Catagory = 3;
 				}
 				else{
 					$mul = "Plese Select number of Seats";
@@ -152,9 +163,13 @@
                   <div class="form-group">
                       <div class="col-sm-12">
                         <form method="post" action="card.php">
-						  <input type="hidden" id="custId" name="val" value="<?php echo $total; ?>">
-						  <button type="submit" class="btn btn-success btn-lg btn-block"  name="">Pay Amount</button>
-						</form>
+                          <input type="hidden" id="custId" name="Catagory" value="<?php echo $total; ?>">
+                          <input type="hidden" id="custId" name="ticketValue" value="<?php echo $pr; ?>">
+                          <input type="hidden" id="custId" name="count" value="<?php echo $mul; ?>">
+                          
+            						  <input type="hidden" id="custId" name="val" value="<?php echo $total; ?>">
+            						  <button type="submit" class="btn btn-success btn-lg btn-block"  name="card">Pay Amount</button>
+            						</form>
                       </div>
                   </div>
                     <div class="form-group">

@@ -1,6 +1,14 @@
 <?php include('../includes/connection.php') ?>
 <?php include('../includes/session.php') ?>
+<?php checkSession(); 
 
+if(!isset($_SESSION['usertype']) || $_SESSION['usertype'] != 'c'){
+       $message = base64_encode(urlencode("Please Login"));
+       header('Location:../html/login.php?msg=' . $message);
+       exit();
+       }
+       
+?>
 <?php 
 
 	
