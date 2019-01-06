@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 05, 2019 at 09:53 AM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.1.15
+-- Generation Time: Jan 06, 2019 at 04:21 PM
+-- Server version: 10.1.28-MariaDB
+-- PHP Version: 7.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -86,6 +86,7 @@ INSERT INTO `reservations` (`id`, `title`, `dayStart`, `eventday`) VALUES
 --
 
 CREATE TABLE `sales` (
+  `Record` int(200) NOT NULL,
   `userID` int(10) NOT NULL,
   `Date` date NOT NULL,
   `eventRef` text NOT NULL,
@@ -98,12 +99,51 @@ CREATE TABLE `sales` (
 -- Dumping data for table `sales`
 --
 
-INSERT INTO `sales` (`userID`, `Date`, `eventRef`, `seatID`, `ticketValue`, `Catagory`) VALUES
-(1, '0000-00-00', '181231134745', 1, 1000, 0),
-(1, '0000-00-00', '181231134745', 2, 3000, 1),
-(2, '0000-00-00', '181231134745', 5, 2000, 2),
-(6, '0000-00-00', '181231134745', 9, 1000, 3),
-(8, '0000-00-00', '181231134745', 21, 3000, 1);
+INSERT INTO `sales` (`Record`, `userID`, `Date`, `eventRef`, `seatID`, `ticketValue`, `Catagory`) VALUES
+(1, 1, '0000-00-00', '181231134745', 1, 1000, 0),
+(2, 1, '0000-00-00', '181231134745', 2, 3000, 1),
+(3, 2, '0000-00-00', '181231134745', 5, 2000, 2),
+(4, 6, '0000-00-00', '181231134745', 9, 1000, 3),
+(5, 8, '0000-00-00', '181231134745', 21, 3000, 1),
+(6, 20, '2019-01-06', '181231163048', 1, 0, 2),
+(7, 20, '2019-01-06', '181231163048', 1, 0, 2),
+(8, 20, '2019-01-06', '181231163048', 1, 0, 2),
+(9, 20, '2019-01-06', '181231163048', 1, 0, 2),
+(10, 20, '2019-01-06', '181231163048', 1, 0, 2),
+(11, 20, '2019-01-06', '181231163048', 1, 0, 2),
+(12, 20, '2019-01-06', '181231163048', 1, 0, 2),
+(13, 20, '2019-01-06', '181231163048', 1, 0, 2),
+(14, 20, '2019-01-06', '181231163048', 1, 0, 2),
+(15, 20, '2019-01-06', '181231163048', 1, 0, 2),
+(16, 20, '2019-01-06', '181231163048', 1, 0, 2),
+(17, 20, '2019-01-06', '181231163048', 1, 0, 2),
+(18, 20, '2019-01-06', '181231163048', 1, 0, 2),
+(19, 20, '2019-01-06', '181231163048', 1, 0, 2),
+(20, 20, '2019-01-06', '181231163048', 1, 0, 2),
+(21, 20, '2019-01-06', '181231163048', 1, 0, 2),
+(22, 20, '2019-01-06', '181231163048', 1, 0, 2),
+(23, 20, '2019-01-06', '181231163048', 1, 0, 2),
+(24, 20, '2019-01-06', '181231163048', 1, 0, 2),
+(25, 20, '2019-01-06', '181231163048', 1, 0, 2),
+(26, 20, '2019-01-06', '181231163048', 1, 0, 2),
+(27, 20, '2019-01-06', '181231163048', 1, 0, 2),
+(28, 20, '2019-01-06', '181231163048', 1, 0, 2),
+(29, 20, '2019-01-06', '181231163048', 1, 0, 2),
+(30, 20, '2019-01-06', '181231163048', 1, 0, 2),
+(31, 20, '2019-01-06', '181231163048', 1, 0, 2),
+(32, 20, '2019-01-06', '181231163048', 1, 0, 2),
+(33, 20, '2019-01-06', '181231163048', 1, 0, 2),
+(34, 20, '2019-01-06', '181231163048', 1, 0, 2),
+(35, 20, '2019-01-06', '181231163048', 1, 0, 2),
+(36, 20, '2019-01-06', '181231163048', 1, 0, 2),
+(37, 20, '2019-01-06', '181231163048', 1, 0, 2),
+(38, 20, '2019-01-06', '181231163048', 1, 0, 2),
+(39, 20, '2019-01-06', '181231163048', 1, 0, 2),
+(40, 20, '2019-01-06', '181231163048', 1, 0, 2),
+(41, 20, '2019-01-06', '181231163048', 1, 0, 2),
+(42, 20, '2019-01-06', '181231163048', 1, 0, 3),
+(43, 20, '2019-01-06', '181231163048', 1, 0, 3),
+(44, 20, '2019-01-06', '181231163048', 1, 0, 3);
 
 -- --------------------------------------------------------
 
@@ -124,7 +164,7 @@ CREATE TABLE `seats` (
 
 INSERT INTO `seats` (`name`, `vip`, `fc`, `sc`) VALUES
 (0, 200, 200, 200),
-(1, 200, 200, 200);
+(1, 0, 200, 200);
 
 -- --------------------------------------------------------
 
@@ -174,12 +214,14 @@ INSERT INTO `tempevents` (`refNo`, `name`, `h1`, `manager_id`, `date`, `time`, `
 ('181231134745', 'ABC', '', 2, '2019-01-01', '13:46:00', 'http://localhost/auditorium/adminfunctions/admin.php', 'http://localhost/auditorium/adminfunctions/admin.php', 'http://localhost/auditorium/adminfunctions/admin.php', 'http://localhost/auditorium/adminfunctions/admin.php', 'aaadasda', 'PEO-hear_no_evil_monkey.svg_-1030x1030.png', '', 1000, 122, 212, 'confirmed'),
 ('181231163048', 'TEst 3', '', 2, '2019-01-22', '15:45:00', 'https://www.facebook.com/', 'https://www.facebook.com/', 'https://www.facebook.com/', 'https://www.facebook.com/', 'ADASLAKSLKAKLSMA', 'Rajeeva-Bandaranaike.jpg', '', 1000, 1111, 2132, 'confirmed'),
 ('190101100922', 'AAA', '', 2, '2019-01-02', '13:45:00', 'http://localhost/auditorium/Admin/lite/create_event.php', 'http://localhost/auditorium/Admin/lite/create_event.php', 'http://localhost/auditorium/Admin/lite/create_event.php', 'http://localhost/auditorium/Admin/lite/create_event.php', 'AAAAAA', 'brainandheart.jpg', '', 1111, 1111, 1111, 'confirmed'),
-('2147483647', '  TEST 3', 'asda', 2, '2019-01-31', '15:45:00', 'https://www.youtube.com/', 'https://www.youtube.com/', 'https://www.youtube.com/', 'https://www.youtube.com/', '  asadsada  ', '1.jpg', '2.jpeg', 11111, 1111, 111, 'confirmed'),
-('2147483647', 'asfdas', 'asdas', 2, '2019-01-27', '23:45:00', 'https://www.youtube.com/', 'https://www.youtube.com/', 'https://www.youtube.com/', 'https://www.youtube.com/', 'sadasdasdasdasd', '6.jpg', '5.jpg', 12121, 121, 1211, 'confirmed'),
-('2147483647', '', '', 0, '0000-00-00', '00:00:00', '', '', '', '', '', '', '', 0, 0, 0, 'not confirmed'),
-('2147483647', '', '', 0, '2019-01-09', '00:00:00', '', '', '', '', '', '', '', 0, 0, 0, 'not confirmed'),
-('2147483647', '', '', 0, '0000-00-00', '00:00:00', '', '', '', '', '', '', '', 0, 0, 0, 'not confirmed'),
-('2147483647', '', '', 0, '2019-01-17', '00:00:00', '', '', '', '', '', '', '', 0, 0, 0, 'not confirmed');
+('2147483647', 'testing 4', 'Event hedding', 19, '2019-01-22', '12:45:00', 'http://localhost/AMS/audi/html/Admin/lite/create_event.php', 'https://facebook.com', 'https:twieter.com', 'https://google.com', 'discribe', '46492965_1445769938888105_6136040546809937920_o.jpg', '46458717_1445767398888359_4968483588954652672_o.jpg', 1000, 2000, 3000, 'confirmed'),
+('2147483647', 'EVENT TWO', 'EVENT TWO', 19, '2019-01-10', '12:45:00', 'http://localhost/AMS/audi/html/Admin/lite/create_event.php', 'https://facebook.com', 'https:twieter.com', 'https://google.com', 'AAAAAAAAAAAAAAAAAAAAAAAAAA', '46362812_1444254675706298_5182224955722432512_o.jpg', '46370521_1444252999039799_6711682510843019264_o.jpg', 998, 1111, 1111, 'confirmed'),
+('2147483647', 'ADMIN MAKE EVENT', 'ADMIN MAKE EVENT', 23, '2019-06-13', '21:45:00', 'http://localhost/AMS/audi/html/Admin/lite/create_event.php', 'https://facebook.com', 'https:twieter.com', 'https://google.com', '!!!!', '46381366_1445786642219768_182596965471617024_o.jpg', '46396544_1445786092219823_6145724237773537280_o.jpg', 11111, 1111, 1111, 'confirmed'),
+('2147483647', 'ADMIN MAKING EVENT', 'ADMIN MAKING EVENT', 23, '2019-06-11', '14:45:00', 'http://localhost/AMS/audi/html/Admin/lite/create_event.php', 'https://facebook.com', 'https:twieter.com', 'https://google.com', 'AAAAAAAAAAAAA', 'download (1).jpg', 'download (2).jpg', 1111, 1111, 110, 'confirmed'),
+('2147483647', 'nimna', 'Event hedding', 22, '2019-01-26', '23:45:00', 'http://localhost/AMS/audi/html/Admin/lite/create_event.php', 'https://facebook.com', 'https:twieter.com', 'https://google.com', 'FFFFFFFFFFF', 'logo2.png', 'mudu_muhune.png', 11111, 1111, 1110, 'confirmed'),
+('2147483647', 'NEW', 'Event hedding', 22, '2019-01-23', '13:45:00', 'http://localhost/AMS/audi/html/Admin/lite/create_event.php', 'https://facebook.com', 'https:twieter.com', 'https://google.com', 'AAA', 'bwea.jpg', 'A.J.P..png', 111, 111, 111, 'not confirmed'),
+('190106202926', 'Last Test', 'Event hedding', 22, '2019-03-05', '14:45:00', 'http://localhost/AMS/audi/html/Admin/lite/create_event.php', 'https://facebook.com', 'https:twieter.com', 'https://google.com', 'hmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm', 'pic2.jpg', 'pic.jpg', 11111, 11111, 11111, 'not confirmed'),
+('190106203050', 'eventrrrrrrr', 'Event hedding', 22, '2019-01-30', '13:45:00', 'http://localhost/AMS/audi/html/Admin/lite/create_event.php', 'https://facebook.com', 'https:twieter.com', 'https://google.com', 'hhhhhhhhhhhhhhhhhhhhhmmmmmmmmmmmmmmmmmm', '46453200_1445771472221285_6923780438439755776_o.jpg', '39213564_2120966558117812_4794219255174266880_o.jpg', 1111, 1111, 111, 'not confirmed');
 
 -- --------------------------------------------------------
 
@@ -234,7 +276,14 @@ INSERT INTO `users` (`id`, `f_name`, `l_name`, `usertype`, `email`, `password`, 
 (14, 'Himansaaaa', 'samarakoon', 'e', 'himansa@gmail.com', '111', 111),
 (15, 'Nimal 2', 'Fernando', 'e', 'fernando@gmail.com', '111', 111),
 (16, 'Gatta', 'Chanuka', 'e', 'dinith@gmail.com', '111', 1111),
-(17, 'assad', 'asdasdas', 'e', 'A@asdas.ca', '111', 111);
+(17, 'assad', 'asdasdas', 'e', 'A@asdas.ca', '111', 111),
+(18, 'Rajitha', 'Fernando', 'c', 'rajith@gmail.com', '356a192b7913b04c54574d18c28d46e6395428ab', 1),
+(19, 'don', 'don', 'e', 'don@don.com', '356a192b7913b04c54574d18c28d46e6395428ab', 1),
+(20, 'cus', 'tomer', 'c', 'c@c.com', '356a192b7913b04c54574d18c28d46e6395428ab', 111),
+(21, 'Admin', 'Admin', 'm', 'admin@a.com', '356a192b7913b04c54574d18c28d46e6395428ab', 1),
+(22, 'Event', 'Manager', 'e', 'e@e.com', '356a192b7913b04c54574d18c28d46e6395428ab', 1),
+(23, 'Admin', '2', 'm', 'a2@a.com', '356a192b7913b04c54574d18c28d46e6395428ab', 1),
+(24, 'navoda', 'lakshani', 'c', 'jkwhdjskfhsdkjg@gmail.com', '356a192b7913b04c54574d18c28d46e6395428ab', 2147483647);
 
 --
 -- Indexes for dumped tables
@@ -245,6 +294,12 @@ INSERT INTO `users` (`id`, `f_name`, `l_name`, `usertype`, `email`, `password`, 
 --
 ALTER TABLE `events`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `sales`
+--
+ALTER TABLE `sales`
+  ADD PRIMARY KEY (`Record`);
 
 --
 -- Indexes for table `users`
@@ -264,10 +319,16 @@ ALTER TABLE `events`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
+-- AUTO_INCREMENT for table `sales`
+--
+ALTER TABLE `sales`
+  MODIFY `Record` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
