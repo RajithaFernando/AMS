@@ -240,7 +240,7 @@ if ($restsc <= 0){
 				echo '
 					<form method="post" action="pay.php">
 						<input type="hidden" id="val" name="val" value="'.$t1.'">
-						<button type="submit" class="btn btn-primary" >Book</button>
+						<button type="submit" class="btn btn-primary" name="vip11" >Book</button>
 					<form>
 					';
 			}
@@ -277,7 +277,7 @@ if ($restsc <= 0){
 				echo '
 					<form method="post" action="pay.php">
 						<input type="hidden" id="val" name="val" value="'.$t2.'">
-						<button type="submit" class="btn btn-primary" >Book</button>
+						<button type="submit" class="btn btn-primary" name="fc11">Book</button>
 					<form>
 					';
 			}
@@ -313,7 +313,7 @@ if ($restsc <= 0){
 				echo '
 					<form method="post" action="pay.php">
 						<input type="hidden" id="val" name="val" value="'.$t3.'">
-						<button type="submit" class="btn btn-primary" >Book</button>
+						<button type="submit" class="btn btn-primary" name="sc11" >Book</button>
 					<form>
 					';
 			}
@@ -352,7 +352,7 @@ if ($restsc <= 0){
 				echo '
 					<form method="post" action="pay.php">
 						<input type="hidden" id="val" name="val" value="'.$t1.'">
-						<button type="submit" class="btn btn-primary" >Book</button>
+						<button type="submit" class="btn btn-primary" name="vip22" >Book</button>
 					<form>
 					';
 			}
@@ -388,7 +388,7 @@ if ($restsc <= 0){
 				echo '
 					<form method="post" action="pay.php">
 						<input type="hidden" id="val" name="val" value="'.$t2.'">
-						<button type="submit" class="btn btn-primary" >Book</button>
+						<button type="submit" class="btn btn-primary" name="fc22" >Book</button>
 					<form>
 					';
 			}
@@ -424,7 +424,7 @@ if ($restsc <= 0){
 				echo '
 					<form method="post" action="pay.php">
 						<input type="hidden" id="val" name="val" value="'.$t3.'">
-						<button type="submit" class="btn btn-primary" >Book</button>
+						<button type="submit" class="btn btn-primary" name="sc22" >Book</button>
 					<form>
 					';
 			}

@@ -1,39 +1,7 @@
 <?php include('../includes/connection.php') ?>
 <?php include('../includes/session.php') ?>
 
-<?php 
 
-	
-if (isset($_POST["vip11"]) || isset($_POST["vip22"])) {
-   
-   $pr = $_POST["val"];
-	
-  $cl =  'VIP CLASS' ;  
-}
-elseif (isset($_POST["fc11"]) || isset($_POST["fc22"])) {  
-    
-    $pr = $_POST["val"];
-	
-  $cl =  'FIRST CLASS' ;
-}
-
-elseif (isset($_POST["sc11"]) || isset($_POST["sc22"])) {  
-    
-    $pr = $_POST["val"];
-// 
-  $cl =  'SECOND CLASS' ;
-}
-else{
-     $pr = 0;
-// 
-  $cl =  'CLASS Not Selected' ;
-}
-// }
-// $_SESSION["price"] = $userRow['f_name'];
-// $_SESSION["class"]
-
-
-?>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -62,11 +30,11 @@ else{
         <div class="row">
 		
           <div class="col-sm-6">
-                <!-- <form class="form-horizontal form-pricing" role="form" action="pay2.php"> -->
+              
 
                   <div class="price-slider">
-                    <h4 class="great">You have selected <?php echo $cl ; ?> Seats</h4>
-                    <span>One Seat is Rs. <?php echo $pr ; ?></span>
+                    <h4 class="great">You have selected  Seats <?php echo $_POST['cl'] ; ?></h4>
+                    <span>One Seat is Rs: <?php echo $_POST['pr'] ; ?></span>
                     <div class="col-sm-12">
                       <div id="slider_amirol"></div>
                     </div>
@@ -77,27 +45,21 @@ else{
                     <div class="btn-group btn-group-justified">
 					
                       <div class="btn-group btn-group-lg">
-            						<form method="post" action="pay2.php">
+            						<form method="post" action="pay.php">
             						<input type="hidden" id="nos1" name="count1" value="1">
-                        <input type="hidden" id="nos1" name="pr" value="<?php echo $pr ; ?>">
-                        <input type="hidden" id="nos1" name="cl" value="<?php echo $cl ; ?>">
-                        <button type="submit" class="btn btn-primary btn-lg btn-block month active-month selected-month" id='24month' name="nos1">1 Seat</button>
+                        <button type="button" class="btn btn-primary btn-lg btn-block month active-month selected-month" id='24month' name="nos1">1 Seat</button>
 						</form> 
 					  </div>
                       <div class="btn-group btn-group-lg">
-            						<form method="post" action="pay2.php">
+            						<form method="post" action="pay.php">
             						<input type="hidden" id="nos2" name="count2" value="2">
-                        <input type="hidden" id="nos1" name="pr" value="<?php echo $pr ; ?>">
-                        <input type="hidden" id="nos1" name="cl" value="<?php echo $cl ; ?>">
-                        <button type="submit" class="btn btn-primary btn-lg btn-block month active-month selected-month" id='24month' name="nos2">2 Seats</button>
+                        <button type="button" class="btn btn-primary btn-lg btn-block month active-month selected-month" id='24month' name="nos2">2 Seats</button>
 						</form> 
 					  </div>
                       <div class="btn-group btn-group-lg">
-            						<form method="post" action="pay2.php">
+            						<form method="post" action="pay.php">
             						<input type="hidden" id="" name="count3" value="3">
-                        <input type="hidden" id="nos1" name="pr" value="<?php echo $pr ; ?>">
-                        <input type="hidden" id="nos1" name="cl" value="<?php echo $cl ; ?>">
-                        <button type="submit" class="btn btn-primary btn-lg btn-block month active-month selected-month" id='24month' name="nos3">3 Seats</button>
+                        <button type="button" class="btn btn-primary btn-lg btn-block month active-month selected-month" id='24month' name="nos3">3 Seats</button>
 						</form> 
 					  </div>
 					
@@ -111,7 +73,34 @@ else{
 					
                   </div>
                   
-		
+				<?php  
+				  if (isset($_POST["nos1"])) {
+					
+          $mul = $_POST["count1"];
+          $pr = $_POST['pr'];
+					
+				}elseif (isset($_POST["nos2"])) {  
+					
+          $mul = $_POST["count2"];
+          $pr = $_POST['pr'];
+					
+				}
+				elseif (isset($_POST["nos3"])) {  
+					
+          $mul = $_POST["count3"];
+          $pr = $_POST['pr'];
+				}
+				else{
+					$mul = "Plese Select number of Seats";
+				}
+				
+
+               ?>
+				
+				
+				
+					  
+				  
               </div>
 			  
 			  
@@ -127,7 +116,7 @@ else{
                         <div class="col-sm-6">
                             <input type="hidden" id="amount_amirol" class="form-control">
                             <!-- <p class="price lead" id="total"></p> -->
-                            <input class="price lead" name="totalprice" type="text" id="total" disabled="disabled" style="" value=" <?php echo $pr ; ?>" />
+                            <input class="price lead" name="totalprice" type="text" id="total" disabled="disabled" style="" value="<?php echo $_POST['pr']; ?>" />
                         </div>
                     </div>
                     </div>
@@ -140,7 +129,7 @@ else{
                         <div class="col-sm-6">
                             <input type="hidden" id="amount_amirol" class="form-control">
                             <!-- <p class="price lead" id="total12"></p> -->
-                            <input class="price lead" name="totalprice12" type="text" id="total12" disabled="disabled" style="" value="Please Select Number of Seats" />
+                            <input class="price lead" name="totalprice12" type="text" id="total12" disabled="disabled" style="" value="<?php echo $mul ; ?>" />
                         </div>
                     </div>
                     </div>
@@ -151,16 +140,23 @@ else{
                           <span class="help-text"></span>
                         </div>
                         <div class="col-sm-6">
-                            <!-- <input type="hidden" id="amount_amirol" class="form-control"> -->
+                            <input type="hidden" id="amount_amirol" class="form-control">
                             <!-- <p class="price lead" id="total52"></p> -->
-                            <input class="price lead" name="totalprice52" type="text" id="total52" disabled="disabled" style=""  value="Please Select Number of Seats"  />
+                            <input class="price lead" name="totalprice52" type="text" id="total52" disabled="disabled" style=""  value=" <?php $total = $mul* $_POST['pr']; echo $total; ?>"  />
                         </div>
                     </div>
                     </div>
                     <div style="margin-top:30px"></div>
                     <hr class="style">
 
-                  
+                  <div class="form-group">
+                      <div class="col-sm-12">
+                        <form method="post" action="card.php">
+						  <input type="hidden" id="custId" name="val" value="<?php echo $total; ?>">
+						  <button type="submit" class="btn btn-success btn-lg btn-block"  name="">Pay Amount</button>
+						</form>
+                      </div>
+                  </div>
                     <div class="form-group">
                       <div class="col-sm-12">
                           <img src="https://github.com/AmirolAhmad/Bootstrap-Calculator/blob/master/images/payment.png?raw=true" class="img-responsive payment" />
@@ -169,6 +165,7 @@ else{
 
                   </div>
 
+                </form>
             </div>
               
             
@@ -180,13 +177,7 @@ else{
 
       </div>
       
-    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js">
-      
-
-      function myFunction() {
-          alert("Plese Selecct Number of Seats!");
-        }
-    </script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
 
 
 </body>

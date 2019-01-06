@@ -65,7 +65,8 @@
       <input type="submit" value="I want to Create events" id="butt" name="event-manager">
 
       <div class="form-group">
-          <a href="registration.php"><input type="button"  name= "login-submit" value="Aledy Have an Account ? Log in hear" id="butt2" ></a>
+        <br>
+          <a href="login.php"><input type="button"  name= "login-submit" value="Already Have an Account ? Log in here"  id="butt22" ></a>
       </div>
 
       <!--<form id="register-form" action="register_submit.php" method="post" role="form" >-->
@@ -90,11 +91,7 @@
                                         
                   </div> -->
                                     
-                                    <div class="row">
-                                        <div class="form-group">
-                      <p style="text-align: center;" class="spn" > Choos any option</p>
-                     </div>
-                                    </div>
+                                    
 
 
 

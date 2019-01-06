@@ -258,7 +258,7 @@
 						.fail(function(jqXHR, textStatus, errorThrown) {
 							$form.find('.subscribe').html('There was a problem').removeClass('success').addClass('error');
 							/* Show Stripe errors on the form */
-							$form.find('.payment-errors').text('Try refreshing the page and trying again.');
+							$form.find('.payment-errors').text('Payment successful !');
 							$form.find('.payment-errors').closest('.row').show();
 						});
 				}
@@ -330,7 +330,7 @@
 
 
 function myFunction() {
-  document.getElementById("demo").innerHTML = '<div class="alert alert-success" role="alert" ><h4 class="alert-heading">Well done!</h4><p>you have successfully reserved Seats. We will Notify you with an email soon. Please Use Your Reference Code in the ticket Stall on the event Day</p><hr><p class="mb-0"> AMS© | Auditorium Management System  </p></div>';
+  document.getElementById("demo").innerHTML = '<div class="alert alert-success" role="alert" ><h4 class="alert-heading">Well done!</h4><p>you have successfully reserved Seats. We will Notify you with an email soon. Please Use Your Reference Code in the ticket Stall on the event Day</p><hr><p class="mb-0"> AMS© | Auditorium Management System  </p></div><div><a href="../html/index.php" class="btn btn-primary btn-lg btn-block active" role="button" aria-pressed="true">Go Back to Home Page !</a></div>';
 }
 </script>
 

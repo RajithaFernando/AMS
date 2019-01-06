@@ -251,7 +251,7 @@
 
                                     $date = $_POST["d1"];
 
-                                    $Query = "SELECT * FROM tempevents WHERE date = .$date ";
+                                    $Query = "SELECT * FROM tempevents WHERE date = ".$date ;
                                             $Result= mysqli_query($connection, $Query);
                                             if (mysqli_num_rows($Result) ==0 ) {
                                                 $freedate = 1;
