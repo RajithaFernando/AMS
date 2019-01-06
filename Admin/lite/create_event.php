@@ -5,7 +5,7 @@
   <?php 
   checkSession();
 
-  if(!isset($_SESSION['usertype']) || $_SESSION['usertype'] != 'e'){
+  if(!isset($_SESSION['usertype']) || $_SESSION['usertype'] != 'e' || $_SESSION['usertype'] != 'm'){
     $message = base64_encode(urlencode("Please Login"));
     header('Location:../../html/login.php?msg=' . $message);
     exit();

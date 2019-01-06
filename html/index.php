@@ -1,3 +1,5 @@
+
+ <?php include('../includes/session.php') ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,6 +43,26 @@
       			<li class="nav-item">
         		<a class="nav-link" href="#contact">CONTACT US</a>
       			</li>
+
+      			<?php 
+      			checkSession(); 
+      			if (isset($_SESSION['usertype'])){
+      				echo '<li class="nav-item">
+        		<a class="nav-link" href="#">Loged IN as '.$_SESSION['echo'].' </a>
+      			</li> 
+      				';
+      			}
+      			else{
+      				echo '
+      				<li class="nav-item">
+        		<a class="nav-link" href="#">Not Loged In  </a>
+      			</li>
+      				';
+      			}
+      			?>
+
+      			
+
       			
     		</ul>
   		</div>

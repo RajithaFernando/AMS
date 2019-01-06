@@ -1,9 +1,13 @@
 <?php include('../includes/connection.php') ?>
-<?php include('../../includes/session.php') ?>
-
-
-
-
+ <?php include('../includes/session.php') ?>
+<?php
+checkSession(); 
+if( $_SESSION['usertype'] != 'm'){
+    $message = base64_encode(urlencode("Please Login"));
+    header('Location:../html/login.php?msg=' . $message);
+    exit();
+}
+?>
 <!DOCTYPE html>
 
   <head>
@@ -86,7 +90,7 @@
           <div class="dropdown-menu" aria-labelledby="pagesDropdown">
             <h6 class="dropdown-header">Add Users:</h6>
             <!-- <a class="dropdown-item" href="login.html">Login</a> -->
-            <a class="dropdown-item" href="register.php">Register</a>
+            <a class="dropdown-item" href="register.php">Add New Admin</a>
             <!-- <a class="dropdown-item" href="forgot-password.html">Forgot Password</a> -->
             <div class="dropdown-divider"></div>
             <h6 class="dropdown-header">Update:</h6>
@@ -114,6 +118,7 @@
             <i class="fas fa-fw fa-table"></i>
             <span>Create Event</span></a>
         </li>
+
       </ul>
 
       <div id="content-wrapper">
@@ -124,6 +129,9 @@
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
               <h1>Welcome to the Admin Panel!!</h1>
+              <div class="alert alert-info">
+          <h4><?php include_once('../includes/message.php'); ?></h4>
+        </div>
             </li>
           <!-- <li class="breadcrumb-item active">Overview</li> -->
           </ol>
@@ -166,7 +174,7 @@
           <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
+            <a class="btn btn-primary" href="../includes/logout.php">Logout</a>
           </div>
         </div>
       </div>

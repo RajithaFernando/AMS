@@ -35,14 +35,17 @@ if(isset($_POST['login-submit'])){
             //echo "sss";
             if($usertype == 'e' ){
             header("Location:../Admin/lite/eventmanager.php" );
+            $_SESSION['echo'] = "EVENT MANAGER" ;
             }
 
             elseif($usertype=='m'){
                 header("Location:../adminfunctions/index.php");
+                            $_SESSION['echo'] = "ADMIN" ;
 
             }
             elseif($usertype=='c'){
                 header("Location:../events.php");
+                $_SESSION['echo'] = "CUSTOMER" ;
 
             }
             //}

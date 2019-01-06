@@ -1,6 +1,6 @@
 
 <?php include('../includes/connection.php') ?>
-<?php include('../includes/session.php') ?>
+
 <?php include('../includes/session.php') ?>
 <?php checkSession(); 
 
@@ -12,7 +12,7 @@ if(!isset($_SESSION['usertype']) || $_SESSION['usertype'] != 'c'){
 
 $_SESSION['event'] = $_POST['ref'];
 
-
+echo $_SESSION['event'];
        
 ?>
 <?php 

@@ -163,7 +163,7 @@ if(!isset($_SESSION['usertype']) || $_SESSION['usertype'] != 'c'){
                   <div class="form-group">
                       <div class="col-sm-12">
                         <form method="post" action="card.php">
-                          <input type="hidden" id="custId" name="Catagory" value="<?php echo $total; ?>">
+                          <input type="hidden" id="custId" name="Catagory" value="<?php echo $Catagory; ?>">
                           <input type="hidden" id="custId" name="ticketValue" value="<?php echo $pr; ?>">
                           <input type="hidden" id="custId" name="count" value="<?php echo $mul; ?>">
                           

@@ -13,16 +13,19 @@ if(!isset($_SESSION['usertype']) || $_SESSION['usertype'] != 'c'){
 
 
 <?php 
-if (isset($_POST['card'])){
-		
+if (isset($_POST['card']) || isset($_POST['sub']))
+	{
 		$userID = $_SESSION['id'];
 		$Date = date("Y-m-d");
-		$eventRef $_SESSION['event'] ;
+		$eventRef = $_SESSION['event'] ;
 		$seatID = "1";
-		$ticketValue = $_POST['pr'] ;
+		$ticketValue = $_POST['ticketValue'] ;
 		$Catagory = $_POST['Catagory'] ;
-		$count = $_POST['count']
-}
+		$count = $_POST['count'];
+
+		$val = $_POST['val'];
+		$_SESSION['paid'] == "Not Paied"  ;
+	}
 
 ?>
 
@@ -198,9 +201,7 @@ if (isset($_POST['card'])){
                         
                         <div class="row">
                             <div class="col-xs-12">
-                            	<form method="post">
-                                	<button type="submit" name="sub" class="subscribe btn btn-success btn-lg btn-block"  onclick="myFunction()">Start Subscription</button>
-                            	</form>
+                            	
                             </div>
                         </div>
                         <div class="row" style="display:none;">
@@ -209,21 +210,64 @@ if (isset($_POST['card'])){
                             </div>
                         </div>
                     </form>
+                    <form action="card.php"  method="post" >
+                            		<input type="hidden" id="custId" name="Catagory" value="<?php echo $Catagory; ?>">
+			                        <input type="hidden" id="custId" name="ticketValue" value="<?php echo $pr; ?>">
+			                        <input type="hidden" id="custId" name="count" value="<?php echo $count; ?>">
+                          			<input type="hidden" id="custId" name="val" value="<?php echo $val ; ?>">
+            						<?php 
+
+            						if (!(isset($_POST['sub'])))
+            						{
+            							echo '<button type="submit" name="sub" id="cust" class="subscribe btn btn-success btn-lg btn-block " onclick="myFunction()">Start Subscription</button>' ;
+            						}
+
+
+            						?>
+
+                                	
+                            	</form>
                 </div>
             </div> 
 
 
 
             <?php 
-            if (isset($_POST['sub']))
-            	Query = "INSERT INTO sales ( userID , Date , eventRef , seatID , ticketValue , Catagory) VALUES ('$userID', '$Date', '$eventRef', '$seatID', '$ticketValue', '$Catagory')";
-            
-            
-            for ($i=0;$i<$count; $i ++){
-            	(mysqli_query($connection,$Query);
+           // echo "sssssssssssssssssss";
 
-            	}
+            if (isset($_POST['sub'])){
+            	// echo "222222222222222";
+
+
+            		$userID = $_SESSION['id'];
+					$Date = date("Y-m-d");
+					$eventRef = $_SESSION['event'] ;
+					$seatID = "1";
+
+					$ticketValue = $_POST['ticketValue'] ;
+					$Catagory = $_POST['Catagory'] ;
+					$count = $_POST['count'];
+
+
+					// echo $userID;
+					// echo $Date;
+					// echo $eventRef;
+					// echo $Catagory;
+					// echo $count;
+					
+            	$Query = "INSERT INTO sales ( userID , Date , eventRef , seatID , ticketValue , Catagory) VALUES ('$userID', '$Date', '$eventRef', '$seatID', '$ticketValue', '$Catagory')";
             
+	            for ($i=0;$i<$count; $i ++){
+	            	$run = mysqli_query($connection,$Query);
+	            	$_SESSION['paid'] = "paid";
+	            	}
+
+
+
+	            	
+            }
+
+
             ?>          
             <!-- CREDIT CARD FORM ENDS HERE -->
             
@@ -231,9 +275,11 @@ if (isset($_POST['card'])){
         </div>            
         
         
-		<div class=\"row">
-												<div class="col-xs-12 col-md-4" id="demo">
+		<div class="row">							<?php if (isset($_POST['sub']))
+															{  echo '<div class="alert alert-success" role="alert" ><h4 class="alert-heading">Well done!</h4><p>you have successfully reserved Seats. We will Notify you with an email soon. Please Use Your Reference Code in the ticket Stall on the event Day</p><hr><p class="mb-0"> AMS© | Auditorium Management System  </p></div><div><a href="../html/index.php" class="btn btn-primary btn-lg btn-block active" role="button" aria-pressed="true">Go Back to Home Page !</a></div>';
+												; } 
 												
+													?> 
 												
 												
 												</div>
@@ -299,7 +345,6 @@ if (isset($_POST['card'])){
 						})
 						.fail(function(jqXHR, textStatus, errorThrown) {
 							$form.find('.subscribe').html('There was a problem').removeClass('success').addClass('error');
-							/* Show Stripe errors on the form */
 							$form.find('.payment-errors').text('Payment successful !');
 							$form.find('.payment-errors').closest('.row').show();
 						});
