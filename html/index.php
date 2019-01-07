@@ -309,7 +309,7 @@
 
 <section id="Footer">
 	<div class="container text-center">
-		<p>copy right<i class="fa fa-copyright"></i></p>
+		<p>AMS© | Auditorium Management System<i class="fa fa-copyright"></i></p>
 		
 	</div>
 </section>

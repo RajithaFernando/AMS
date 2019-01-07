@@ -51,13 +51,13 @@ Include the above in your HEAD tag ---------->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                    <a class="nav-link" href="#top">HOME</a>
+                    <a class="nav-link" href="html/index.php">HOME</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link" href="#">EVENT</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">GALLERY</a>
+                    <a class="nav-link" href="html/gallery.php">GALLERY</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link" href="#about">ABOUT US</a>
@@ -207,7 +207,7 @@ Include the above in your HEAD tag ---------->
 
     <section id="Footer">
   <div class="container text-center">
-    <p>copy right<i class="fa fa-copyright"></i></p>
+    <p>AMS© | Auditorium Management System<i class="fa fa-copyright"></i></p>
     
   </div>
 </section>
