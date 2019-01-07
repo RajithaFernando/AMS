@@ -22,10 +22,15 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/ionicons/css/ionicons.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Rancho" rel="stylesheet">
 	
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
     <style>
         .site-header {
             width: 100%;
@@ -71,6 +76,27 @@
 		.fa{
 			 color:#4183D7;
 		}
+        .container {
+            margin-top: 100px;
+        }
+        .card-title {
+            padding: 10px;
+        }
+        .card-content {
+            text-align: center;
+            padding: 0px !important;
+        }
+        ul li {
+            padding: 20px !important;
+            font-weight: bold;
+        }
+        .card {
+            transition: .5s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            transition: .5s;
+        }
 
     </style>
 
@@ -121,6 +147,77 @@
             </div><!-- /.row -->
         </div><!-- /.container -->
     </section>
+
+
+
+        <div class="row">
+        <!--basic-->
+        
+        <div class="col s12 m4">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-title green white-text">
+                        <h3>VIP CLASS</h3>
+                        <h5>RS : <?php echo $row['ticket1']; ?></h5>
+                    </div>
+                    <ul class="collection">
+                        <li class="collection-item">Ultimate Experiance</li>
+                        
+                    </ul>
+                </div>
+                
+                <div class="card-action">
+                  
+                </div>
+            </div>
+        </div>
+        
+        <!--standard-->
+        
+        <div class="col s12 m4">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-title yellow darken-4 white-text">
+                        <h3>FIRST CLASS</h3>
+                        <h5>RS : <?php echo $row['ticket2']; ?></h5>
+                    </div>
+                    <ul class="collection">
+                        <li class="collection-item">FIRST class experiance</li>
+                        
+                    </ul>
+                </div>
+                
+                <div class="card-action">
+                    
+                </div>
+            </div>
+        </div>
+        
+        <!--pro-->
+        
+        <div class="col s12 m4">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-title blue white-text">
+                        <h3>SECOND CLASS</h3>
+                        <h5>RS : <?php echo $row['ticket3']; ?></h5>
+                    </div>
+                    <ul class="collection">
+                        <li class="collection-item">Value the Money</li>
+                        
+                    </ul>
+                </div>
+                
+                <div class="card-action">
+                    
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+    </div>
 	
 	<section>
 		<div class="box anc">
