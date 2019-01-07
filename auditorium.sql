@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 06, 2019 at 04:21 PM
+-- Generation Time: Jan 07, 2019 at 03:35 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -100,50 +100,9 @@ CREATE TABLE `sales` (
 --
 
 INSERT INTO `sales` (`Record`, `userID`, `Date`, `eventRef`, `seatID`, `ticketValue`, `Catagory`) VALUES
-(1, 1, '0000-00-00', '181231134745', 1, 1000, 0),
-(2, 1, '0000-00-00', '181231134745', 2, 3000, 1),
-(3, 2, '0000-00-00', '181231134745', 5, 2000, 2),
-(4, 6, '0000-00-00', '181231134745', 9, 1000, 3),
-(5, 8, '0000-00-00', '181231134745', 21, 3000, 1),
-(6, 20, '2019-01-06', '181231163048', 1, 0, 2),
-(7, 20, '2019-01-06', '181231163048', 1, 0, 2),
-(8, 20, '2019-01-06', '181231163048', 1, 0, 2),
-(9, 20, '2019-01-06', '181231163048', 1, 0, 2),
-(10, 20, '2019-01-06', '181231163048', 1, 0, 2),
-(11, 20, '2019-01-06', '181231163048', 1, 0, 2),
-(12, 20, '2019-01-06', '181231163048', 1, 0, 2),
-(13, 20, '2019-01-06', '181231163048', 1, 0, 2),
-(14, 20, '2019-01-06', '181231163048', 1, 0, 2),
-(15, 20, '2019-01-06', '181231163048', 1, 0, 2),
-(16, 20, '2019-01-06', '181231163048', 1, 0, 2),
-(17, 20, '2019-01-06', '181231163048', 1, 0, 2),
-(18, 20, '2019-01-06', '181231163048', 1, 0, 2),
-(19, 20, '2019-01-06', '181231163048', 1, 0, 2),
-(20, 20, '2019-01-06', '181231163048', 1, 0, 2),
-(21, 20, '2019-01-06', '181231163048', 1, 0, 2),
-(22, 20, '2019-01-06', '181231163048', 1, 0, 2),
-(23, 20, '2019-01-06', '181231163048', 1, 0, 2),
-(24, 20, '2019-01-06', '181231163048', 1, 0, 2),
-(25, 20, '2019-01-06', '181231163048', 1, 0, 2),
-(26, 20, '2019-01-06', '181231163048', 1, 0, 2),
-(27, 20, '2019-01-06', '181231163048', 1, 0, 2),
-(28, 20, '2019-01-06', '181231163048', 1, 0, 2),
-(29, 20, '2019-01-06', '181231163048', 1, 0, 2),
-(30, 20, '2019-01-06', '181231163048', 1, 0, 2),
-(31, 20, '2019-01-06', '181231163048', 1, 0, 2),
-(32, 20, '2019-01-06', '181231163048', 1, 0, 2),
-(33, 20, '2019-01-06', '181231163048', 1, 0, 2),
-(34, 20, '2019-01-06', '181231163048', 1, 0, 2),
-(35, 20, '2019-01-06', '181231163048', 1, 0, 2),
-(36, 20, '2019-01-06', '181231163048', 1, 0, 2),
-(37, 20, '2019-01-06', '181231163048', 1, 0, 2),
-(38, 20, '2019-01-06', '181231163048', 1, 0, 2),
-(39, 20, '2019-01-06', '181231163048', 1, 0, 2),
-(40, 20, '2019-01-06', '181231163048', 1, 0, 2),
-(41, 20, '2019-01-06', '181231163048', 1, 0, 2),
-(42, 20, '2019-01-06', '181231163048', 1, 0, 3),
-(43, 20, '2019-01-06', '181231163048', 1, 0, 3),
-(44, 20, '2019-01-06', '181231163048', 1, 0, 3);
+(1, 20, '2019-01-07', '190107071909', 1, 3000, 1),
+(48, 20, '2019-01-07', '190107071909', 1, 3000, 1),
+(49, 20, '2019-01-07', '190107071909', 1, 2000, 2);
 
 -- --------------------------------------------------------
 
@@ -197,31 +156,7 @@ CREATE TABLE `tempevents` (
 --
 
 INSERT INTO `tempevents` (`refNo`, `name`, `h1`, `manager_id`, `date`, `time`, `web_url`, `fb_url`, `twitter_url`, `google_url`, `description`, `image`, `image2`, `ticket1`, `ticket2`, `ticket3`, `status`) VALUES
-('0', 'Ninnada', '', 1, '2018-09-20', '08:00:00', 'https://www.facebook.com/ninnada.ucsc/', '', '', '', 'Ninnada 2018 Organized by the students union of University of Colombo School of Computing in aim of aiding rural schools of Sri lanka', '', '', 100, 1500, 2000, ''),
-('0', 'Image2', '', 2, '2018-12-30', '13:45:00', 'https://www.youtube.com/watch?v=tbNlMtqrYS0', 'https://www.youtube.com/watch?v=tbNlMtqrYS0', '', 'https://www.youtube.com/watch?v=tbNlMtqrYS0', 'SOME DISCRIPTION', 'SSSS', '', 1000, 1000, 1000, ''),
-('0', 'NECTXAA', '', 2, '2013-08-19', '13:45:00', 'https://www.youtube.com/watch?v=6Ejga4kJUts', 'https://www.youtube.com/watch?v=6Ejga4kJUts', 'https://www.youtube.com/watch?v=6Ejga4kJUts', 'https://www.youtube.com/watch?v=6Ejga4kJUts', 'SSs', 'hadi3.jpg', '', 2132, 121, 21312, ''),
-('0', 'A', '', 2, '2018-11-22', '23:45:00', 'https://codingwithsara.com/a-calendar-with-php-mysql/', 'https://codingwithsara.com/a-calendar-with-php-mysql/', 'https://codingwithsara.com/a-calendar-with-php-mysql/', 'https://codingwithsara.com/a-calendar-with-php-mysql/', 'https://codingwithsara.com/a-calendar-with-php-mysql/https://codingwithsara.com/a-calendar-with-php-mysql/', 'saas', '', 100, 200, 296, ''),
-('0', 'Chrsdi', '', 11, '2018-11-28', '01:45:00', 'https://www.tutorialspoint.com/php/php_file_uploading.htm', 'https://www.tutorialspoint.com/php/php_file_uploading.htm', 'https://www.tutorialspoint.com/php/php_file_uploading.htm', 'https://www.tutorialspoint.com/php/php_file_uploading.htm', 'sadsda', 'sss', '', 1111, 111, 123, ''),
-('0', 'CCCC', '', 11, '2018-11-29', '13:45:00', 'https://www.tutorialspoint.com/php/php_file_uploading.htm', 'https://www.tutorialspoint.com/php/php_file_uploading.htm', 'https://www.tutorialspoint.com/php/php_file_uploading.htm', 'https://www.tutorialspoint.com/php/php_file_uploading.htm', 'asldasld', 'sss', '', 111, 212, 211, ''),
-('0', 'Imagesdas', '', 2, '2011-10-19', '13:45:00', 'https://www.youtube.com/watch?v=1w7OgIMMRc4', 'https://www.youtube.com/watch?v=1w7OgIMMRc4', 'https://www.youtube.com/watch?v=1w7OgIMMRc4', 'https://www.youtube.com/watch?v=1w7OgIMMRc4', 'ald;asl', 'brainandheart.jpg', '', 11211, 121, 1231, ''),
-('0', 'Netx', '', 2, '2013-10-21', '15:45:00', 'https://www.youtube.com/watch?v=1w7OgIMMRc4', 'https://www.youtube.com/watch?v=1w7OgIMMRc4', 'https://www.youtube.com/watch?v=1w7OgIMMRc4', 'https://www.youtube.com/watch?v=1w7OgIMMRc4', 'salmlsdm', 'cantthinkofanew1.png', '', 12212, 12212, 1212, ''),
-('0', 'Netx', '', 2, '2013-10-21', '15:45:00', 'https://www.youtube.com/watch?v=1w7OgIMMRc4', 'https://www.youtube.com/watch?v=1w7OgIMMRc4', 'https://www.youtube.com/watch?v=1w7OgIMMRc4', 'https://www.youtube.com/watch?v=1w7OgIMMRc4', 'salmlsdm', 'hasi.jpg', '', 12212, 12212, 123123, ''),
-('123', 'asad', '', 1, '2018-11-15', '07:19:00', 'adcdc', 'sdf', 'sd', 'ds', 'wdsfsdf', 'sdac', '', 23, 123, 123, ''),
-('123', 'asad', '', 1, '2018-11-15', '07:19:00', 'adcdc', 'sdf', 'sd', 'ds', 'wdsfsdf', 'sdac', '', 23, 123, 123, ''),
-('111111', 'TESTING!@#', '', 2, '2016-11-19', '13:45:00', 'https://www.youtube.com/watch?v=DdMcAUlxh1M', 'https://www.youtube.com/watch?v=DdMcAUlxh1M', 'https://www.youtube.com/watch?v=DdMcAUlxh1M', 'https://www.youtube.com/watch?v=DdMcAUlxh1M', 'asdasd', 'UCSC-5-1.jpg', '', 1221, 1212, 121, ''),
-('181130093912', 'ABC', '', 2, '2011-08-19', '13:45:00', 'https://www.youtube.com/watch?v=nfWlot6h_JM', 'https://www.youtube.com/watch?v=nfWlot6h_JM', 'https://www.youtube.com/watch?v=nfWlot6h_JM', 'https://www.youtube.com/watch?v=nfWlot6h_JM', 'wsadawd', 'hasi.jpg', '', 7, 8, 5, ''),
-('181130094208', 'final', '', 2, '2011-08-19', '13:45:00', 'https://www.youtube.com/watch?v=nfWlot6h_JM', 'https://www.youtube.com/watch?v=nfWlot6h_JM', 'https://www.youtube.com/watch?v=nfWlot6h_JM', 'https://www.youtube.com/watch?v=nfWlot6h_JM', 'wsadawd', 'sarama.jpg', '', 7, 8, 9, ''),
-('181231134745', 'ABC', '', 2, '2019-01-01', '13:46:00', 'http://localhost/auditorium/adminfunctions/admin.php', 'http://localhost/auditorium/adminfunctions/admin.php', 'http://localhost/auditorium/adminfunctions/admin.php', 'http://localhost/auditorium/adminfunctions/admin.php', 'aaadasda', 'PEO-hear_no_evil_monkey.svg_-1030x1030.png', '', 1000, 122, 212, 'confirmed'),
-('181231163048', 'TEst 3', '', 2, '2019-01-22', '15:45:00', 'https://www.facebook.com/', 'https://www.facebook.com/', 'https://www.facebook.com/', 'https://www.facebook.com/', 'ADASLAKSLKAKLSMA', 'Rajeeva-Bandaranaike.jpg', '', 1000, 1111, 2132, 'confirmed'),
-('190101100922', 'AAA', '', 2, '2019-01-02', '13:45:00', 'http://localhost/auditorium/Admin/lite/create_event.php', 'http://localhost/auditorium/Admin/lite/create_event.php', 'http://localhost/auditorium/Admin/lite/create_event.php', 'http://localhost/auditorium/Admin/lite/create_event.php', 'AAAAAA', 'brainandheart.jpg', '', 1111, 1111, 1111, 'confirmed'),
-('2147483647', 'testing 4', 'Event hedding', 19, '2019-01-22', '12:45:00', 'http://localhost/AMS/audi/html/Admin/lite/create_event.php', 'https://facebook.com', 'https:twieter.com', 'https://google.com', 'discribe', '46492965_1445769938888105_6136040546809937920_o.jpg', '46458717_1445767398888359_4968483588954652672_o.jpg', 1000, 2000, 3000, 'confirmed'),
-('2147483647', 'EVENT TWO', 'EVENT TWO', 19, '2019-01-10', '12:45:00', 'http://localhost/AMS/audi/html/Admin/lite/create_event.php', 'https://facebook.com', 'https:twieter.com', 'https://google.com', 'AAAAAAAAAAAAAAAAAAAAAAAAAA', '46362812_1444254675706298_5182224955722432512_o.jpg', '46370521_1444252999039799_6711682510843019264_o.jpg', 998, 1111, 1111, 'confirmed'),
-('2147483647', 'ADMIN MAKE EVENT', 'ADMIN MAKE EVENT', 23, '2019-06-13', '21:45:00', 'http://localhost/AMS/audi/html/Admin/lite/create_event.php', 'https://facebook.com', 'https:twieter.com', 'https://google.com', '!!!!', '46381366_1445786642219768_182596965471617024_o.jpg', '46396544_1445786092219823_6145724237773537280_o.jpg', 11111, 1111, 1111, 'confirmed'),
-('2147483647', 'ADMIN MAKING EVENT', 'ADMIN MAKING EVENT', 23, '2019-06-11', '14:45:00', 'http://localhost/AMS/audi/html/Admin/lite/create_event.php', 'https://facebook.com', 'https:twieter.com', 'https://google.com', 'AAAAAAAAAAAAA', 'download (1).jpg', 'download (2).jpg', 1111, 1111, 110, 'confirmed'),
-('2147483647', 'nimna', 'Event hedding', 22, '2019-01-26', '23:45:00', 'http://localhost/AMS/audi/html/Admin/lite/create_event.php', 'https://facebook.com', 'https:twieter.com', 'https://google.com', 'FFFFFFFFFFF', 'logo2.png', 'mudu_muhune.png', 11111, 1111, 1110, 'confirmed'),
-('2147483647', 'NEW', 'Event hedding', 22, '2019-01-23', '13:45:00', 'http://localhost/AMS/audi/html/Admin/lite/create_event.php', 'https://facebook.com', 'https:twieter.com', 'https://google.com', 'AAA', 'bwea.jpg', 'A.J.P..png', 111, 111, 111, 'not confirmed'),
-('190106202926', 'Last Test', 'Event hedding', 22, '2019-03-05', '14:45:00', 'http://localhost/AMS/audi/html/Admin/lite/create_event.php', 'https://facebook.com', 'https:twieter.com', 'https://google.com', 'hmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm', 'pic2.jpg', 'pic.jpg', 11111, 11111, 11111, 'not confirmed'),
-('190106203050', 'eventrrrrrrr', 'Event hedding', 22, '2019-01-30', '13:45:00', 'http://localhost/AMS/audi/html/Admin/lite/create_event.php', 'https://facebook.com', 'https:twieter.com', 'https://google.com', 'hhhhhhhhhhhhhhhhhhhhhmmmmmmmmmmmmmmmmmm', '46453200_1445771472221285_6923780438439755776_o.jpg', '39213564_2120966558117812_4794219255174266880_o.jpg', 1111, 1111, 111, 'not confirmed');
+('190107071909', 'Happy New Year', 'Wishing you a happy new year full of happiness!', 22, '2019-01-07', '12:00:00', 'http://www.happynewyear.com', 'http://www.facebook.happy.com', 'http:/twieter.new.com', 'https://google.year.com', 'We hope your life will be full of surprise and joy in the new year thatâ€™s about to begin. May You be blessed with everything you want in life. May the new year bring all the good things in life you truly deserve !', 'hny.jpg', 'hny2.jpg', 3000, 2000, 1000, 'confirmed');
 
 -- --------------------------------------------------------
 
@@ -322,7 +257,7 @@ ALTER TABLE `events`
 -- AUTO_INCREMENT for table `sales`
 --
 ALTER TABLE `sales`
-  MODIFY `Record` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `Record` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `users`
